@@ -15,7 +15,7 @@ export default function About() {
             
             <div className="w-full flex justify-evenly mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center">
                
-                <div className="relative h-120 w-auto overflow-hidden rounded-lg gsap-about-left max-sm:h-fit max-sm:w-auto max-sm:mb-20">
+                <div className="relative h-120 w-auto overflow-hidden rounded-lg gsap-about-left max-sm:h-fit max-sm:w-auto max-sm:mb-20 border-4 ">
                     <img src={portraitFormal} className="w-full h-full object-fill relative rounded-lg max-sm:h-[55vh] max-sm:w-auto"/>
                 </div>
 
@@ -27,7 +27,7 @@ export default function About() {
 
             <div className="w-250 h-fit mt-13 text-2xl text-white gsap-about-top max-sm:w-auto">
 
-                <div className="w-full h-8 mb-5 items-center justify-center text-center overflow-hidden max-sm:overflow-visible max-sm:h-fit max-sm:pb-5">
+                <div className="w-full h-8 mb-5 items-center justify-center text-center overflow-hidden max-sm:overflow-visible max-sm:h-fit max-sm:pb-5  ">
                     <div className="flex justify-center relative bottom-[5px] font-bold text-3xl text-white max-sm:flex-col max-sm:items-center">
                         
                         <div className="h-fit w-fit max-sm:pb-5">Welcome To My Portfolio! &nbsp;</div>

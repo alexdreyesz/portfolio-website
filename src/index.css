@@ -152,3 +152,63 @@ img {
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
 }
+
+
+/* Register Custom Property So It Can Animate The Glowing Border */
+@property --alpha {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Glowing Border Class */
+.glowing-border {
+  position: relative;
+  border: solid 1px transparent;
+  border-radius: 1em;
+}
+
+.glowing-border::before,
+.glowing-border::after {
+  --full: conic-gradient(red 0 0);
+  position: absolute;
+  inset: -1px;
+  border: inherit;
+  border-radius: inherit; 
+  box-shadow: 0 0 6em rgba(0, 0, 0, 0.001);
+
+  background: conic-gradient(
+      from var(--alpha),
+      #f94144,
+      #f3722c,
+      #f8961e,
+      #f9844a,
+      #f9c74f,
+      #90be6d,
+      #43aa8b,
+      #4d908e,
+      #277da1,
+      #577590,
+      #f94144
+    )
+    border-box;
+
+  mask: var(--full) no-clip subtract, var(--full) padding-box;
+  -webkit-mask: var(--full) no-clip subtract, var(--full) padding-box;
+
+  pointer-events: none;
+
+  animation: rotate 4s linear infinite;
+
+  content: "";
+}
+
+.glowing-border::after {
+  filter: blur(1em);
+}
+
+@keyframes rotate {
+  to {
+    --alpha: 1turn;
+  }
+}
