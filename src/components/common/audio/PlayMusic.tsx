@@ -182,8 +182,7 @@ export default function PlayMusic() {
                         </div>
 
                         <div className="relative bottom-1">
-                        <Slider audioRef={audioRef} volume={volume} setVolume={setVolume} />
-
+                            <Slider audioRef={audioRef} volume={volume} setVolume={setVolume} />
                         </div>
                     </div>
                 </div>

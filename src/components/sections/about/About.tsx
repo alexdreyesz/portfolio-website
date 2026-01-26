@@ -10,7 +10,7 @@ export default function About() {
 
     GSAPScrollBehaviorAbout();
 
-    let introduction = "As stated before my name is Alex D. Reyes, and I am a Computer Science student at the University of Central Florida. I am currently collaborating with U.S. Space Force to develop AskPolaris, an AI-powered IT solution tool. Some of my hobbies are listening to music, playing video games, game development, playing football, archery, and spending quality time with friends and family.";
+    let introduction = "As stated before, my name is Alex D. Reyes, and I’m a Computer Science graduate from the University of Central Florida. I collaborated with the U.S. Space Force to develop AskPolaris, an AI-powered IT solution tool, and I also served as a Teaching Assistant for UCF’s Senior Design course, where I helped students manage their capstone projects. Outside of tech, I enjoy listening to music, playing video games, exploring game development, playing football, archery, and spending quality time with friends and family.";
 
     return(
         <div id="about" className="h-500 mt-20 flex-col justify-items-center scroll-mt-12 max-sm:h-fit max-sm:mb-15">
