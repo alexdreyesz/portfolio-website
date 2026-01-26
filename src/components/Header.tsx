@@ -22,6 +22,7 @@ function Header() {
                 <a className="cursor-pointer interactive-animation" href="#about"><p className="hover:scale-110">About</p></a>
                 <a className="cursor-pointer interactive-animation" href="#career"><p className="hover:scale-110">Career</p></a>
                 <a className="cursor-pointer interactive-animation" href="#projects"><p className="hover:scale-110">Projects</p></a>
+                <a className="cursor-pointer interactive-animation" href="#contact"><p className="hover:scale-110">Contact</p></a>
                 <PlayMusic/>
             </nav>
 

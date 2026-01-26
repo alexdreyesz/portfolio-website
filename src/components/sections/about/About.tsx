@@ -41,8 +41,7 @@ export default function About() {
                                 <span className="wrapper">
                                     {words.map((word) => (
                                         <span key={word.text} className="flex items-center gap-2 pb-2">
-                                            <img src={word.imgPath} className="h-6" alt={word.text}>
-                                            </img>
+                                            <img src={word.imgPath} className="h-6" alt={word.text}></img>
 
                                             <span>{word.text}</span>
                                         </span>
