@@ -1,5 +1,3 @@
-import linkedIdnIcon from '../../../assets/icons/badges/professional/linkedin.svg';
-
 interface ContactCardProps{
     icon: string;
     title: string;

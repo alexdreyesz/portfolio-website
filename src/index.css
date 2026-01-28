@@ -178,7 +178,6 @@ img {
 
 .glowing-border::before,
 .glowing-border::after {
-  --full: conic-gradient(red 0 0);
   position: absolute;
   inset: -1px;
   border: inherit;
@@ -201,8 +200,9 @@ img {
     )
     border-box;
 
-  mask: var(--full) no-clip subtract, var(--full) padding-box;
-  -webkit-mask: var(--full) no-clip subtract, var(--full) padding-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) padding-box exclude, linear-gradient(#fff 0 0);
 
   pointer-events: none;
 
