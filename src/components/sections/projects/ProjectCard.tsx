@@ -17,7 +17,7 @@ export default function ProjectCards({imgUrl, link, date, title, description, te
         <div className="h-fit w-85 rounded-2xl border-1 border-gray-800 glowing-border">
             <div className="relative left-1.5  text-white content-center items-center">
                 
-            <div className="w-full h-full z-[-1] absolute right-[6px]  rounded-2xl  backdrop-blur-md bg-white/0"></div>
+            <div className="w-full h-full z-[-1] absolute right-[6px] rounded-2xl backdrop-blur-md bg-white/0"></div>
             
                 <div className="mt-3 flex">
                     <div className="h-30 w-30 ml-2 mr-4 flex justify-center items-center content-center">

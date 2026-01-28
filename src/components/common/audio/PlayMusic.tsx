@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react"
 import { songs } from "../../../constants/index"
 import Slider from "./slider/Slider"
 import playIcon from "../../../assets/icons/music/pause.png"
+import replayIcon from "../../../assets/icons/music/replay.png"
 import pauseIcon from "../../../assets/icons/music/play.png"
 import nextSong from "../../../assets/icons/music/next-song.png"
 
@@ -30,6 +31,10 @@ export default function PlayMusic() {
                 audioRef.current.pause();
             }
         }
+    }
+
+    function replaySong() {
+        audioRef.current!.currentTime = 0;
     }
 
     function playNextSong() {
@@ -76,7 +81,7 @@ export default function PlayMusic() {
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.pause();
-            audioRef.current.load();
+            
             audioRef.current.volume = volumeRef.current;
     
             if (isPlaying) {
@@ -88,7 +93,6 @@ export default function PlayMusic() {
             }
         }
     }, [index, isPlaying]);
-    
 
     useEffect(() => {
         if (audioRef.current) {
@@ -140,7 +144,7 @@ export default function PlayMusic() {
             <audio key={index} ref={audioRef} src={songs[index].songUrl} loop={true}/>
             <button className="button flex justify-center items-center align-middle gap-2" onClick={() => { if (!isMobile()) togglePlay(); }}><img className="h-4" src={toggleIcon}/>Play</button>
 
-            {isPopupVisible && (
+           {isPopupVisible && (
                 <div className="absolute left-35 top-[31.8px] h-70 w-110 border-1 border-gray-800 mt-1 px-2 py-1 rounded-lg backdrop-blur-md bg-white/0 text-white text-sm z-10 max-sm:left-[25px] max-sm:-translate-x-1/2 max-sm:w-screen max-sm:top-[31px] max-sm:ml-auto max-sm:mr-auto" 
                     onClick={(e) => e.stopPropagation()}    
 
@@ -170,15 +174,15 @@ export default function PlayMusic() {
                     </div>
 
                     <div className="h-[30%] w-auto relative bottom-3 flex-col justify-center items-center content-center text-center g-amber-300">
-                        <div className="w-full flex justify-evenly pb-6 pt-1 gap-21">
+                        <div className="w-full flex justify-evenly pb-6 pt-1 gap-8">
                             <button><img onClick={playPreviousSong} src={nextSong} className="button h-8 rotate-180 invert"/></button>
                             <button><img onClick={togglePlay} src={toggleIcon} className="relative right-[1px] button h-7 invert"/></button>
+                            <button><img onClick={replaySong} src={replayIcon} className="relative right-[1px] button h-7 invert"/></button>
                             <button><img onClick={playNextSong} src={nextSong} className="button h-8 invert"/></button>
                         </div>
 
                         <div className="relative bottom-1">
-                        <Slider audioRef={audioRef} volume={volume} setVolume={setVolume} />
-
+                            <Slider audioRef={audioRef} volume={volume} setVolume={setVolume} />
                         </div>
                     </div>
                 </div>

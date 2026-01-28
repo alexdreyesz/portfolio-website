@@ -1,6 +1,7 @@
-import github from '../assets/icons/github.png'
-import linkedin from '../assets/icons/linkedin.png'
-import resume from '../assets/icons/resume.png'
+import gmailIcon from '../assets/icons/contact/gmail-icon-white.png'
+import github from '../assets/icons/contact/github.png'
+import linkedin from '../assets/icons/contact/linkedin.png'
+import resume from '../assets/icons/contact/resume.png'
 import resumePdf from '../assets/documents/AlexReyes_Resume.pdf'
 
 import bonk from '../assets/sound/bonk.mp3'
@@ -13,19 +14,23 @@ function Footer() {
     return(
         <footer className="h-24 footer-background flex justify-between items-center max-sm:h-50 max-sm:flex-col max-sm:justify-evenly max-sm:items-center max-sm:text-center">
             
-            <div className="relative left-8 flex text-white max-sm:left-0">Thank you for visiting!! <PlayAudio source={frog}><p className="hover:scale-120 hover:animate-ping cursor-pointer">&nbsp;:D</p></PlayAudio></div>
+            <div className="relative left-8 flex text-white max-sm:left-0">Thank you for visiting!! <PlayAudio source={frog}><p className="interactive-animation hover:scale-115 hover:animate-ping cursor-pointer">&nbsp;:D</p></PlayAudio></div>
 
             <div className="relative right-1 flex space-x-12 max-sm:space-x-20">
-                <a href="https://github.com/alexdreyesz" target="_blank" rel="noopener noreferrer">
-                    <img src={github} className="h-8 w-auto hover:scale-120 invert" alt="Github Link"/>
+                <a href="mailto:alexdreyesz@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <img src={gmailIcon} className="h-8.5 w-auto interactive-animation  hover:scale-115" alt="Email Link"/>
                 </a>
-
+                
                 <a href="https://www.linkedin.com/in/alexdreyesz/" target="_blank" rel="noopener noreferrer">
-                    <img src={linkedin} className="h-8 w-auto hover:scale-120 invert" alt="LinkedIn Link"/>
+                    <img src={linkedin} className="h-8 w-auto interactive-animation hover:scale-115" alt="LinkedIn Link"/>
+                </a>
+                
+                <a href="https://github.com/alexdreyesz" target="_blank" rel="noopener noreferrer">
+                    <img src={github} className="h-8 w-auto interactive-animation hover:scale-115" alt="Github Link"/>
                 </a>
 
                 <a href={resumePdf} target="_blank" rel="noopener noreferrer">
-                    <img src={resume} className="h-8 w-auto hover:scale-120 invert" alt="Resume Link"/>
+                    <img src={resume} className="h-8.5 w-auto interactive-animation hover:scale-115" alt="Resume Link"/>
                 </a>
             </div>
 
