@@ -1,30 +1,30 @@
 export default function ContactMessage() {
 
     return(
-        <div className="h-full w-full border-5 rounded-2xl backdrop-blur-md bg-white/0 glowing-border">
-            <div>
+        <div className="h-full w-full p-10 flex flex-col justify-evenly gap-5 backdrop-blur-md bg-white/0 glowing-border">
+            <div className="flex flex-col gap-2 text-white">
                 <p>Name</p>
-                <form>
-                    <input type="text" placeholder="Your Name" />
+                <form className="w-full border-2 rounded-2xl border-white p-3">
+                    <input type="text" placeholder="Your Name" className="h-full w-full outline-none"/>
                 </form>
             </div>
 
-            <div>
+            <div className="flex flex-col gap-2 text-white">
                 <p>Email</p>
-                <form>
-                    <input type="text" placeholder="your.email@example.com" />
+                <form className="w-full border-2 rounded-2xl border-white p-3">
+                    <input type="text" placeholder="your.email@example.com"  className="h-full w-full outline-none"/>
                 </form>
             </div>
 
-            <div>
+            <div className="flex flex-col gap-2 text-white">
                 <p>Message</p>
-                <form>
-                    <input type="text" placeholder="Tell me about your project or inquiry" />
+                <form className="h-fit w-full border-2 rounded-2xl border-white p-3">
+                    <textarea placeholder="Tell me about your project or inquiry"  className="h-40 w-full resize-none outline-none"/>
                 </form>
             </div>
 
             <div>
-                <button className="h-12 w-32 mt-5 mb-5 rounded-2xl backdrop-blur-md bg-white/0 glowing-border text-white hover:scale-105 transition-all duration-300">Send Message</button>
+                <button className="h-15 w-full mt-5 mb-5 rounded-2xl font-bold bg-white hover:scale-105 transition-all duration-300">Send Message</button>
             </div>
         </div>
     );
