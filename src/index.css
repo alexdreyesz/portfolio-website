@@ -178,6 +178,7 @@ img {
 
 .glowing-border::before,
 .glowing-border::after {
+  --full: conic-gradient(red 0 0);
   position: absolute;
   inset: -1px;
   border: inherit;
@@ -200,9 +201,8 @@ img {
     )
     border-box;
 
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) padding-box exclude, linear-gradient(#fff 0 0);
+  mask: var(--full) no-clip subtract, var(--full) padding-box;
+  -webkit-mask: var(--full) no-clip subtract, var(--full) padding-box;
 
   pointer-events: none;
 
@@ -218,5 +218,15 @@ img {
 @keyframes rotate {
   to {
     --alpha: 1turn;
+  }
+}
+
+/* Removes glow on mobile as it causes issues */ 
+@media (max-width: 768px) {
+  .glowing-border::before,
+  .glowing-border::after {
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) padding-box exclude, linear-gradient(#fff 0 0);
   }
 }
