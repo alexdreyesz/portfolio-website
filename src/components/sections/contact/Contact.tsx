@@ -1,6 +1,11 @@
 import ContactCard from "./ContactCard"
+import ContactMessage from "./ContactMessage"
 
-
+import gmail from '../../../assets/icons/contact/gmail-icon.svg';
+import linkedInIcon from '../../../assets/icons/badges/professional/linkedin.svg';
+import githubIcon from '../../../assets/icons/contact/github-icon-color.svg';
+import resumeIcon from '../../../assets/icons/contact/resume-icon.png';
+import resumePDF from '../../../assets/documents/AlexReyes_Resume.pdf';
 
 export default function Contact() {
 
@@ -14,19 +19,19 @@ export default function Contact() {
             </div>
 
             <div className="flex justify-center gap-40">
-                <div className=" w-[30%] flex flex-col gap-10">
+                <div className="h-auto w-[30%] flex flex-col gap-10">
                     <div className="h-fit w-full flex-col text-white">
                         <p className="text-4xl pb-5">Let's Connect</p>
                         <p className="text-xl/8">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through any of the following channels.</p>
                     </div>
-                    <ContactCard />
-                    <ContactCard />
-                    <ContactCard />
-                    <ContactCard />
+                    <a href="mailto:alexdreyesz@gmail.com" target="_blank"><ContactCard icon={gmail} title="Email" detail="alexdreyesz@gmail.com" /></a>
+                    <a href="https://www.linkedin.com/in/alexdreyesz/" target="_blank"><ContactCard icon={linkedInIcon} title="LinkedIn" detail="linkedin.com/in/alexdreyesz" /></a>
+                    <a href="https://github.com/alexdreyesz" target="_blank"><ContactCard icon={githubIcon} title="Github" detail="github.com/alexdreyesz" /></a>
+                    <a href={resumePDF} target="_blank"><ContactCard icon={resumeIcon} title="Resume" detail="Check out my Resume" /></a>
                 </div>
                 
-                <div className="w-[30%] flex flex-col gap-10 rounded-2xl backdrop-blur-md bg-white/0 glowing-border">
-
+                <div className="h-auto w-[30%]">
+                    <ContactMessage />
                 </div>
             </div> 
         </div>
