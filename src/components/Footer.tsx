@@ -16,7 +16,7 @@ function Footer() {
             
             <div className="relative left-8 flex text-white max-sm:left-0">Thank you for visiting!! <PlayAudio source={frog}><p className="interactive-animation hover:scale-115 hover:animate-ping cursor-pointer">&nbsp;:D</p></PlayAudio></div>
 
-            <div className="relative right-1 flex space-x-12 max-sm:space-x-20">
+            <div className="relative right-1 flex space-x-12 max-sm:space-x-15">
     
                 <a href="https://github.com/alexdreyesz" target="_blank" rel="noopener noreferrer">
                     <img src={github} className="h-8 w-auto interactive-animation hover:scale-115" alt="Github Link"/>

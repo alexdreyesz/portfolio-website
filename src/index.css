@@ -172,7 +172,7 @@ img {
 /* Glowing Border Class */
 .glowing-border {
   position: relative;
-  border: solid 1px transparent;
+  border: solid 2px transparent;
   border-radius: 1em;
 }
 
@@ -206,13 +206,13 @@ img {
 
   pointer-events: none;
 
-  animation: rotate 4s linear infinite;
+  animation: rotate 6s linear infinite;
 
   content: "";
 }
 
 .glowing-border::after {
-  filter: blur(1em);
+  filter: blur(1.2em);
 }
 
 @keyframes rotate {
@@ -225,8 +225,11 @@ img {
 @media (max-width: 768px) {
   .glowing-border::before,
   .glowing-border::after {
+    border: solid 3px transparent;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask: linear-gradient(#fff 0 0) padding-box exclude, linear-gradient(#fff 0 0);
+
+    animation: rotate 10s linear infinite;
   }
 }

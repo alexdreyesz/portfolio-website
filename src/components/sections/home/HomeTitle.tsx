@@ -9,7 +9,7 @@ function Home() {
             <div className="mt-5">
                 <Typewriter
                     options={{
-                        strings: ['I am a Computer Science Student at UCF, and', 'I will Be King Of The Software Engineers 👒😃'],
+                        strings: ['I am a Computer Science graduate from UCF, and', 'I will Be King Of The Software Engineers 👒😃'],
                         autoStart: true,
                         loop: true,
                         cursor: '|',

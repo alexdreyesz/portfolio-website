@@ -43,7 +43,7 @@ function Model() {
 export default function SunnyBoat() {
 
     return (
-        <figure className="h-[60%]">
+        <figure className="h-[60%] w-100">
         <Canvas camera={{position: [0, 0, 15], fov: 35}}>
             <ambientLight intensity={1} color="#988ad4" />
             <directionalLight position={[5, 5, 5]} intensity={5}/>

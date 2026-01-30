@@ -1,10 +1,14 @@
-import { words, languages, frameworks, libraries, developmentTools, designTools, databases, AILLM, professional } from "../../../constants/index"
-import portraitFormal from '/src/assets/images/portrait-formal.png'
-import family from '/src/assets/images/family.jpeg'
-
-import IconShowCaseAbout from "./IconShowCaseAbout";
-
+import { words } from "../../../constants/index"
 import GSAPScrollBehaviorAbout from "../../../utils/gsapScrollBehaviorAbout"
+
+
+// Images
+import portraitFormal from '../../../assets/images/portrait-formal.png'
+import family from '../../../assets/images/family.jpeg'
+
+import molly from "../../../assets/images/molly.jpeg"
+
+import graduation from "../../../assets/images/graduation.jpeg"
 
 export default function About() {
 
@@ -13,21 +17,9 @@ export default function About() {
     let introduction = "As stated before, my name is Alex D. Reyes, and I’m a Computer Science graduate from the University of Central Florida. I collaborated with the U.S. Space Force to develop AskPolaris, an AI-powered IT solution tool, and I also served as a Teaching Assistant for UCF’s Senior Design course, where I helped students manage their capstone projects. Outside of tech, I enjoy listening to music, playing video games, exploring game development, playing football, archery, and spending quality time with friends and family.";
 
     return(
-        <div id="about" className="h-500 mt-20 flex-col justify-items-center scroll-mt-12 max-sm:h-fit max-sm:mb-15">
+        <div id="welcome" className="h-fit mt-20 flex-col justify-items-center scroll-mt-12 max-sm:h-fit max-sm:mb-15">
 
-            <div className="w-full flex justify-evenly mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center">
-               
-                <div className="relative h-120 w-auto overflow-hidden rounded-lg gsap-about-left max-sm:h-fit max-sm:w-auto max-sm:mb-20">
-                    <img src={portraitFormal} className="w-full h-full object-fill relative rounded-lg max-sm:h-[55vh] max-sm:w-auto"/>
-                </div>
-
-                <div className="relative h-120 w-auto overflow-hidden rounded-lg gsap-about-right max-sm:h-fit">
-                    <img src={family} className="w-full h-full object-fill relative rounded-lg max-sm:h-[30.5vh] max-sm:w-auto"/>
-                </div>
-
-            </div>
-
-            <div className="w-250 h-fit mt-13 text-2xl text-white gsap-about-top max-sm:w-auto">
+            <div className="w-250 h-fit mt-13 text-2xl text-white gsap-about-top max-sm:w-auto max-sm:mb-20">
 
                 <div className="w-full h-8 mb-5 items-center justify-center text-center overflow-hidden max-sm:overflow-visible max-sm:h-fit max-sm:pb-5  ">
                     <div className="flex justify-center relative bottom-[5px] font-bold text-3xl text-white max-sm:flex-col max-sm:items-center">
@@ -54,54 +46,53 @@ export default function About() {
  
                 <p className="flex-col text-2xl/9 max-sm:pl-6 max-sm:pr-6">{introduction}</p>
             </div>
+
+            <div className="w-full flex justify-evenly mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center">
+   
+                <div className="gsap-about-left-portrait">
+                    <div className="relative h-120 w-auto rounded-2xl glowing-border max-sm:h-fit max-sm:w-auto max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <img src={portraitFormal} className="w-full h-full object-fill relative rounded-2xl max-sm:h-[55vh] max-sm:w-auto"/>
+                    </div>
+                </div>
+
+                <div className="gsap-about-right-portrait">
+                    <div className="relative h-120 w-auto glowing-border rounded-2xl max-sm:h-fit max-sm:w-auto max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <img src={family} className="w-full h-full object-fill relative rounded-2xl max-sm:h-[30.5vh] max-sm:w-auto"/>
+                    </div>
+                </div>
+
+            </div>
+
             
-            <IconShowCaseAbout 
-                CategoryName="Languages"
-                CategoryObject={languages}
-                GSAPDirection="down"
-            />
 
-            <IconShowCaseAbout 
-                CategoryName="Frameworks"
-                CategoryObject={frameworks}
-                GSAPDirection="down"
-            />
+            <div id="about" className="h-22 w-auto pt-30 pb-40 flex-col justify-center text-center items-center content-center text-white gsap-skills-top max-sm:pb-70">
+                <p className="text-4xl pb-5">About Me</p>
+                <p className="w-[80%] text-2xl/9 mx-auto text-center">Here’s a bit about my background, interests, and what drives me as a developer.</p>
+            </div>
+                                
+            {/*Molly Section*/}
+            <div className="w-full flex justify-evenly text-white pb-20 mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center gsap-about-down">         
+                <div className="relative h-120 w-auto rounded-2xl glowing-border gsap-about-left max-sm:h-fit max-sm:w-auto max-sm:mb-20">
+                    <img src={molly} className="w-full h-full object-fill relative rounded-2xl max-sm:h-[55vh] max-sm:w-auto"/>
+                </div>
 
-            <IconShowCaseAbout 
-                CategoryName="Libraries"
-                CategoryObject={libraries}
-                GSAPDirection="down"
-            />
+                <div className="w-[30%] min-w-100">
+                    <p className="text-5xl gsap-about-right text-center pb-10">Molly</p>
 
-            <IconShowCaseAbout 
-                CategoryName="Development Tools"
-                CategoryObject={developmentTools}
-                GSAPDirection="down"
-            />
+                    <p className="text-2xl/9 gsap-about-right">She is My precious dog. She was a part of our family on 2020.</p>
+                </div>
 
-            <IconShowCaseAbout 
-                CategoryName="Design Tools"
-                CategoryObject={designTools}
-                GSAPDirection="down"
-            />
+            </div>
 
-            <IconShowCaseAbout 
-                CategoryName="Databases"
-                CategoryObject={databases}
-                GSAPDirection="down"
-            />
-
-            <IconShowCaseAbout 
-                CategoryName="AI & LLMs"
-                CategoryObject={AILLM}
-                GSAPDirection="down"
-            />
-
-            <IconShowCaseAbout 
-                CategoryName="Professional"
-                CategoryObject={professional}
-                GSAPDirection="down"
-            />
+            {/*Molly Section*/}
+            <div className="w-full flex justify-evenly text-white pb-20 mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center gsap-about-top">         
+                <p className="w-[30%] min-w-100 text-2xl/9 gsap-about-left">Here’s a bit about my background, interests, and what drives me as a developer.</p>
+                
+                <div className="relative h-120 w-auto rounded-2xl glowing-border gsap-about-right max-sm:h-fit max-sm:w-auto max-sm:mb-20">
+                    <img src={molly} className="w-full h-full object-fill relative rounded-2xl max-sm:h-[55vh] max-sm:w-auto"/>
+                </div>
+            </div>
+     
         </div>
     )
 }
