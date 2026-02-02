@@ -15,7 +15,7 @@ export default function GSAPScrollBehaviorAbout() {
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: card as HTMLElement,
-                    start: "top 80%",
+                    start: "top 70%",
                     toggleActions: "play none none reverse",
                 }
             });
@@ -30,37 +30,7 @@ export default function GSAPScrollBehaviorAbout() {
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: card as HTMLElement,
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                }
-            });
-        });
-
-        gsap.utils.toArray(".gsap-about-left-portrait").forEach((card) => {
-            gsap.from(card as HTMLElement, {
-                xPercent: -100,
-                opacity: 0,
-                transformOrigin: "left left",
-                duration: 1.75,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: card as HTMLElement,
-                    start: "top 80%",
-                    toggleActions: "play none none reverse",
-                }
-            });
-        });
-
-        gsap.utils.toArray(".gsap-about-right-portrait").forEach((card) => {
-            gsap.from(card as HTMLElement, {
-                xPercent: 100,
-                opacity: 0,
-                transformOrigin: "right right",
-                duration: 1.75,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: card as HTMLElement,
-                    start: "top 80%",
+                    start: "top 70%",
                     toggleActions: "play none none reverse",
                 }
             });
@@ -92,6 +62,51 @@ export default function GSAPScrollBehaviorAbout() {
                 trigger: text as HTMLElement,
                 start: "top 90%",
                 toggleActions: "play none none reverse",
+                }
+            });
+        });
+
+        gsap.utils.toArray(".gsap-about-top-portrait").forEach((text) => {
+            gsap.from(text as HTMLElement, {
+                yPercent: 50,
+                opacity: 0,
+                transformOrigin: "bottom bottom",
+                duration: 1.75,
+                ease: "power2.out",
+                scrollTrigger: {
+                trigger: text as HTMLElement,
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+                }
+            });
+        });
+
+        gsap.utils.toArray(".gsap-about-left-portrait").forEach((card) => {
+            gsap.from(card as HTMLElement, {
+                xPercent: -100,
+                opacity: 0,
+                transformOrigin: "left left",
+                duration: 1.75,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: card as HTMLElement,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse",
+                }
+            });
+        });
+
+        gsap.utils.toArray(".gsap-about-right-portrait").forEach((card) => {
+            gsap.from(card as HTMLElement, {
+                xPercent: 100,
+                opacity: 0,
+                transformOrigin: "right right",
+                duration: 1.75,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: card as HTMLElement,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse",
                 }
             });
         });

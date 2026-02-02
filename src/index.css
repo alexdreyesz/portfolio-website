@@ -233,3 +233,40 @@ img {
     animation: rotate 10s linear infinite;
   }
 }
+
+/*** Carousel 3D Styles ***/
+.carousel-banner {
+    width: 100%;
+    height: 70vh;
+    background: white;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+ 
+.carousel-slider {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(-36deg);
+    animation: sliderRotate 35s linear infinite;
+}
+
+@keyframes sliderRotate {
+    from {
+        transform: perspective(9000px) rotateY(0deg);
+    }
+    to {
+        transform: perspective(9000px) rotateY(360deg);
+    }
+}
+.carousel-slider-item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+    rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) 
+    translateZ(800px);
+}

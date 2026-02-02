@@ -145,7 +145,7 @@ export default function PlayMusic() {
             <button className="button flex justify-center items-center align-middle gap-2" onClick={() => { if (!isMobile()) togglePlay(); }}><img className="h-4" src={toggleIcon}/>Play</button>
 
            {isPopupVisible && (
-                <div className="absolute left-[271.5px] top-[31.5px] h-70 w-110 border-1 border-gray-800 mt-1 px-2 py-1 rounded-lg backdrop-blur-md bg-white/0 text-white text-sm z-10 max-sm:left-[25px] max-sm:-translate-x-1/2 max-sm:w-screen max-sm:top-[31.8px] max-sm:ml-auto max-sm:mr-auto" 
+                <div className="absolute left-[527px] top-[31.5px] h-70 w-110 border-1 border-gray-800 mt-1 px-2 py-1 rounded-lg backdrop-blur-md bg-white/0 text-white text-sm z-10 max-sm:left-[25px] max-sm:-translate-x-1/2 max-sm:w-screen max-sm:top-[31.8px] max-sm:ml-auto max-sm:mr-auto" 
                     onClick={(e) => e.stopPropagation()}    
 
                     onMouseEnter={() => {
