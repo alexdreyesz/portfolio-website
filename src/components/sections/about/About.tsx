@@ -77,7 +77,7 @@ export default function About() {
             <div id="about" className="h-22 w-auto pt-30 pb-40 scroll-mt-[-70px] flex-col justify-center text-center items-center content-center text-white max-sm:pb-70">
                 <div className="gsap-about-top">
                     <p className="text-4xl pb-5">About Me</p>
-                    <p className="w-[80%] text-2xl/9 mx-auto text-center">Here’s a bit about my background, interests, and what drives me as a developer.</p>
+                    <p className="w-[80%] text-2xl/9 mx-auto text-center">Here’s a little bit about my life and background.</p>
                 </div>
             </div>
 
@@ -88,9 +88,34 @@ export default function About() {
                 </div>
 
                 <div className="w-[40%] min-w-100 gsap-about-right">
-                    <p className="text-5xl text-center pb-10">Graduated from CS</p>
+                    <p className="text-5xl text-center pb-10">Graduation</p>
 
                     <p className="text-2xl/9 px-20">In December 2025, I graduated from the University of Central Florida (UCF) with a B.S. in Computer Science. During my time at UCF, I focused on fullstack development and gained experience supporting teams and building real projects. I served as a Teaching Assistant for the Senior Design course, and I also won first place in one category at the UCF Knight Hacks hackathon.</p>
+                </div>
+            </div>
+
+            {/*Knight Hacks Section*/}
+            <div className="w-full flex justify-center gap-40 text-white pb-20 mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center gsap-about-top-portrait">         
+                <div className="w-[40%] min-w-100 gsap-about-left-portrait">
+                    <p className="text-5xl text-center pb-10">KnightHacks</p>
+
+                    <p className="text-2xl/9 px-20">I was part of Knight Hacks, where I served as a Workshop Director and mentor. I helped run events, led workshops to teach technical topics, and supported other students as they learned and built projects. Through the club, I also strengthened my network while contributing to a more engaged and collaborative community.</p>
+                </div>
+
+                <div className="gsap-about-right-portrait">
+                    <PortraitAbout portrait={knightHacks} title="KnightHacks" body="2026 KnightHacks banquet event." />    
+                </div>
+            </div>
+
+            {/*Hackathon Section*/}
+            <div className="w-full flex justify-center gap-40 text-white pb-20 mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center gsap-about-down">         
+                <div className="gsap-about-left">
+                    <PortraitAbout portrait={hackathon} title="Hackathon" body="Me and my team Knight Hacks 8. Winners 1st place Morgan&Morgan Challenge" />    
+                </div>
+
+                <div className="w-[40%] min-w-100 gsap-about-right">
+                    <p className="text-5xl text-center pb-10">Hackathon</p>
+                    <p className="text-2xl/9 px-20">Throughout my time at UCF, I participated in several hackathons to challenge myself and compete alongside talented students from across the country. I took part in hackathons such as ShellHacks and Knight Hacks, where I strengthened my teamwork, problem solving, and rapid development skills. At Knight Hacks 8, my team earned first place in a Morgan & Morgan challenge, winning us the $4,000 prize.</p>
                 </div>
             </div>
 
@@ -99,33 +124,7 @@ export default function About() {
                 <div className="w-[40%] min-w-100 gsap-about-left-portrait">
                     <p className="text-5xl text-center pb-10">Family</p>
 
-                    <p className="text-2xl/9 px-20">Me and my family on graduation day. The journey came with plenty of challenges, but I pushed through each one and I’m proud to have finally earned my degree.</p>
-                </div>
-
-                <div className="gsap-about-right-portrait">
-                    <PortraitAbout portrait={knightHacks} title="Family" body="This is my family with me on my graduation day." />    
-                </div>
-            </div>
-
-            {/*Graduation Section*/}
-            <div className="w-full flex justify-center gap-40 text-white pb-20 mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center gsap-about-down">         
-                <div className="gsap-about-left">
-                    <PortraitAbout portrait={hackathon} title="Graduation" body="Graduated from University of Central Florida with a B.S. in Computer Science." />    
-                </div>
-
-                <div className="w-[40%] min-w-100 gsap-about-right">
-                    <p className="text-5xl text-center pb-10">Graduated from CS</p>
-
-                    <p className="text-2xl/9 px-20">In December 2025, I graduated from the University of Central Florida (UCF) with a B.S. in Computer Science. During my time at UCF, I focused on fullstack development and gained experience supporting teams and building real projects. I served as a Teaching Assistant for the Senior Design course, and I also won first place in one category at the UCF Knight Hacks hackathon.</p>
-                </div>
-            </div>
-
-            {/*Family Section*/}
-            <div className="w-full flex justify-center gap-40 text-white pb-20 mt-10 mb-10 max-sm:flex-col max-sm:justify-center max-sm:items-center gsap-about-top-portrait">         
-                <div className="w-[40%] min-w-100 gsap-about-left-portrait">
-                    <p className="text-5xl text-center pb-10">Precious family member Molly</p>
-
-                    <p className="text-2xl/9 px-20">She is My precious dog. She was a part of our family on 2020.</p>
+                    <p className="text-2xl/9 px-20">This is my family. They sacrificed so much to help me become the professional I am today, and I’m committed to doing everything I can to take care of them. I’ll keep working hard, earning my place wherever I need to, so I can support them the way they’ve supported me. I love them deeply.</p>
                 </div>
 
                 <div className="gsap-about-right-portrait">
@@ -140,14 +139,20 @@ export default function About() {
                 </div>
 
                 <div className="w-[40%] min-w-100 gsap-about-right">
-                    <p className="text-5xl text-center pb-10">Graduated from CS</p>
+                    <p className="text-5xl text-center pb-10">Dearly Beloved</p>
 
-                    <p className="text-2xl/9 px-20">In December 2025, I graduated from the University of Central Florida (UCF) with a B.S. in Computer Science. During my time at UCF, I focused on fullstack development and gained experience supporting teams and building real projects. I served as a Teaching Assistant for the Senior Design course, and I also won first place in one category at the UCF Knight Hacks hackathon.</p>
+                    <p className="text-2xl/9 px-20">She’s a precious member of our family. Her name is Molly, and she joined us around 2020. She’s a Maltese and has the sweetest personality. She only drinks cold water and won’t eat unless her meal includes cooked chicken. She also loves sleeping in the air conditioning preferably on a comfy bed.</p>
                 </div>
             </div>
 
             {/*Carrousel Section*/}
-            <div className="carousel-banner">
+            <div className="h-22 w-auto scroll-mt-[-70px] flex-col justify-center text-center items-center content-center text-white max-sm:pb-70">
+                <div className="gsap-about-top">
+                    <p className="text-4xl pb-5">Molly Showcase</p>
+                </div>
+            </div>
+
+            <div className="carousel-banner gsap-about-top-portrait mt-20 mb-20">
                 <div className="carousel-slider" style={{"--quantity": 8} as React.CSSProperties}>
                     <CarouselAbout index="1" portrait={mollyPurple} title="Molly Purple" body="Molly with a nice purple ribbon" />  
                     <CarouselAbout index="2" portrait={mollyAsking} title="Molly Asking" body="Molly asking for a treat" />  

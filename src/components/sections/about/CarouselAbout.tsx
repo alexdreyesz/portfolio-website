@@ -33,13 +33,13 @@ export default function CarouselAbout({ index,portrait, title, body }: CarouselP
                 <div className="text-white">
                     <div className="h-full w-full absolute inset-0 z-1 rounded-2xl transition-colors duration-300 ease-in-out bg-black/35"></div>
 
-                    <div className="absolute bottom-3 left-3 right-3 z-2 text-white">
+                    <div className="absolute bottom-3 left-3 right-3 z-2 flex flex-col justify-start text-white overflow-hidden items-start text-left">
                         <div className="h-fit w-fit border-1 border-white rounded-2xl backdrop-blur-md bg-white/0 px-3 py-1 mb-2">
-                            <p className="">{title}</p>
+                            <p className="text-left">{title}</p>
                         </div>
 
                         <div className="h-fit w-full text-wrap overflow-hidden">
-                            <p className="">{body}</p>
+                            <p className="text-left">{body}</p>
                         </div>
                     </div>
                 </div>

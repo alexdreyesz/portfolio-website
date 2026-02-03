@@ -17,8 +17,8 @@ function App() {
       <main className="overflow-hidden">
         <Home/>
         <About/>
-        <Skills/>
         <Career/>
+        <Skills/>
         <Projects/>
         <Contact/>
       </main>

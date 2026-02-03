@@ -157,7 +157,15 @@ export const cards = {
       title: "Software Engineer Intern",
       location: "U.S Space Force",
       description: "Developing an AI-powered IT solution that leverages technologies like OpenAI, Azure SQL, ServiceNow, and Archibus to streamline IT operations, reduce ticket volume, and enhance user productivity through intelligent, self-service support.",
-    }
+    },
+
+    seniorDesign: {
+      imgUrl: logoIcons['../assets/icons/logo/ucf-symbol.png'] as string,
+      date: "August 2025 - December 2025",
+      title: "Senior Design Teaching Assistant",
+      location: "Univerisity of Central Florida",
+      description: "Assisting senior design students in managing their capstone projects, providing guidance on project planning, development, and execution. Facilitating collaboration and ensuring students meet academic and technical requirements for successful project completion.",
+    },
 };
 
 /* Constants For Projects Section */

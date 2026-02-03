@@ -1,10 +1,7 @@
 import { cards } from "../../../constants/index"
 import CareerCard from "./CareerCard"
 
-import MasterSword from "../../common/3d-models/3DBadge"
-import StarCompass from "../../common/3d-models/3DBadge"
-import GomuGomuNoMi from "../../common/3d-models/3DBadge"
-import Digivice from "../../common/3d-models/3DBadge"
+import Badge3D from "../../common/3d-models/3DBadge"
 
 import GSAPScrollBehaviorCareer from "../../../utils/gsapScrollBehaviorCareer"
 
@@ -22,6 +19,7 @@ export default function Career() {
                 <p className="w-[80%] text-2xl/9 mx-auto text-center">These are some of the highlights of my career journey. I’ve been fortunate to pursue higher education and to collaborate with incredible companies, individuals, and teams.</p>
             </div>
             
+            {/* Hillsborough Section */}
             <div className="pt-20 pl-20 flex gsap-career-card-left max-sm:flex-col max-sm:justify-center max-sm:align-center max-sm:items-center">
                 <CareerCard
                     imgUrl={cards.hillsborough.imgUrl}
@@ -32,9 +30,10 @@ export default function Career() {
                     size={"h-23"}
                 />
 
+                {/* Badge 3D Model Master Sword */}
                 {!isMobile() && (
                    <div className="ml-auto mr-40 max-sm:pt-30 max-sm:pb-30">
-                        <MasterSword
+                        <Badge3D
                             badge3DURL="/models/badges/master-sword-compressed.glb"
                             positionXYZ={{ x: 0, y: 0, z: -1 }}
                             rotationXYZ={{ x: 1.4, y: -0.5, z: 0 }}
@@ -45,7 +44,7 @@ export default function Career() {
                 
                 {isMobile() && (
                    <div className="mx-auto pt-10 relative right-10 h-100 w-[100%]">
-                        <MasterSword
+                        <Badge3D
                             badge3DURL="/models/badges/master-sword-compressed.glb"
                             positionXYZ={{ x: 0, y: 0, z: -2 }}
                             rotationXYZ={{ x: 1.4, y: -0.5, z: 0 }}
@@ -55,11 +54,12 @@ export default function Career() {
                 )}
             </div>
 
+            {/* XIME Section */}
             <div className="pt-20 pr-20 flex justify-end gsap-career-card-right max-sm:pt-10 max-sm:flex-col max-sm:justify-center max-sm:align-center max-sm:items-center">
                 
                 {!isMobile() && (
                     <div className="ml-30 mr-auto max-sm:order-1 max-sm:pt-30 max-sm:pb-15 max-sm:ml-20 max-sm:relative max-sm:right-3 max-sm:bottom-8">
-                        <Digivice
+                        <Badge3D
                             badge3DURL="/models/badges/digimon-digivice-compressed.glb"
                             positionXYZ={{ x: 0, y: 0, z: -430 }}
                             rotationXYZ={{ x: 0, y: 9.5, z: -0.005 }}
@@ -68,9 +68,10 @@ export default function Career() {
                     </div>
                 )}
 
+                {/* Badge 3D Digimon Digivice */}
                 {isMobile() && (
                     <div className="order-1 mx-auto pt-10 relative left-10 h-100 w-[100%]">
-                        <Digivice
+                        <Badge3D
                             badge3DURL="/models/badges/digimon-digivice-compressed.glb"
                             positionXYZ={{ x: 0, y: 0, z: -430 }}
                             rotationXYZ={{ x: 0, y: 9.5, z: -0.005 }}
@@ -91,6 +92,7 @@ export default function Career() {
                 </div>
             </div>
 
+            {/* UCF Section */}
             <div className="pt-20 pl-20 flex gsap-career-card-left max-sm:pt-10 max-sm:flex-col max-sm:justify-center max-sm:align-center max-sm:items-center max-sm:relative max-sm:right-20">
                 
                 <div className="max-sm:relative max-sm:left-20 max-sm:pb-10">
@@ -104,10 +106,10 @@ export default function Career() {
                     />
                 </div>
 
-      
+                {/* Badge 3D Model Star Compass  */}
                 {!isMobile() && (
                     <div className="ml-auto mr-35 max-sm:pt-30 max-sm:pb-30 max-sm:relative max-sm:left-15">
-                        <StarCompass
+                        <Badge3D
                             badge3DURL="/models/badges/star-compass-compressed.glb"
                             positionXYZ={{ x: 0, y: 0, z: 1 }}
                             rotationXYZ={{ x: 0, y: 0, z: 0 }}
@@ -118,7 +120,7 @@ export default function Career() {
 
                 {isMobile() && (
                     <div className="mx-auto relative left-10 h-100 w-[100%]">
-                        <StarCompass
+                        <Badge3D
                             badge3DURL="/models/badges/star-compass-compressed.glb"
                             positionXYZ={{ x: 0, y: 0, z: 1 }}
                             rotationXYZ={{ x: 0, y: 0, z: 0 }}
@@ -128,12 +130,13 @@ export default function Career() {
                 )}
 
             </div>
-
+            
+            {/* Space Force Section */}
             <div className="pt-20 pr-20 flex justify-end gsap-career-card-right max-sm:pt-10 max-sm:flex-col max-sm:justify-center max-sm:align-center max-sm:items-center">
                 
                 {!isMobile() && (
                     <div className="ml-30 mr-auto max-sm:order-1 max-sm:pt-30 max-sm:pb-15 max-sm:ml-20 max-sm:relative max-sm:right-4">
-                        <GomuGomuNoMi
+                        <Badge3D
                             badge3DURL="/models/badges/gomu-gomu-no-mi-compressed.glb"
                             positionXYZ={{ x: 0, y: -25, z: -240 }}
                             rotationXYZ={{ x: 0, y: 1, z: 0 }}
@@ -142,9 +145,10 @@ export default function Career() {
                     </div>                   
                 )}
 
+                {/* Badge 3D Model Gomu Gomu No Mi */}
                 {isMobile() && (
                     <div className="order-1 mx-auto relative left-10 h-100 w-[100%]">
-                        <GomuGomuNoMi
+                        <Badge3D
                             badge3DURL="/models/badges/gomu-gomu-no-mi-compressed.glb"
                             positionXYZ={{ x: 0, y: -25, z: -240 }}
                             rotationXYZ={{ x: 0, y: 1, z: 0 }}
@@ -164,6 +168,45 @@ export default function Career() {
                         size={"h-22"}
                     />
                 </div>
+            </div>
+
+            {/* UCF Section */}
+            <div className="pt-20 pl-20 flex gsap-career-card-left max-sm:pt-10 max-sm:flex-col max-sm:justify-center max-sm:align-center max-sm:items-center max-sm:relative max-sm:right-20">
+                
+                <div className="max-sm:relative max-sm:left-20 max-sm:pb-10">
+                    <CareerCard
+                        imgUrl={cards.seniorDesign.imgUrl}
+                        date={cards.seniorDesign.date}
+                        title={cards.seniorDesign.title}
+                        location={cards.seniorDesign.location}
+                        description={cards.seniorDesign.description}
+                        size={"h-20"}
+                    />
+                </div>
+
+                {/* Badge 3D Model Grubbed Trapped */}
+                {!isMobile() && (
+                    <div className="ml-auto mr-35 max-sm:pt-30 max-sm:pb-30 max-sm:relative max-sm:left-15">
+                        <Badge3D
+                            badge3DURL="/models/badges/grub-trapped.glb"
+                            positionXYZ={{ x: 0, y: -3.3, z: -10 }}
+                            rotationXYZ={{ x: 0.4, y: 0, z: 0 }}
+                            animationXYZ={{x: 0, y: 0.004, z: 0}}
+                        />
+                    </div>
+                )}
+
+                {isMobile() && (
+                    <div className="mx-auto relative left-10 h-100 w-[100%]">
+                        <Badge3D
+                            badge3DURL="/models/badges/grub-trapped.glb"
+                            positionXYZ={{ x: 0, y: -3.3, z: -10 }}
+                            rotationXYZ={{ x: 0.3, y: 0, z: 0 }}
+                            animationXYZ={{x: 0, y: 0.004, z: 0}}
+                        />
+                    </div>
+                )}
+
             </div>
 
         </div>
