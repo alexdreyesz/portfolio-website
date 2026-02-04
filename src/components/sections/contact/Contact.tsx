@@ -14,10 +14,10 @@ export default function Contact() {
     GSAPScrollBehaviorContact();
 
     return(
-        <div id="contact" className="h-fit scroll-mt-[50px] pb-30">
-            <div className="h-22 w-auto pb-35 flex-col justify-center text-center items-center content-center text-white max-sm:pb-60 gsap-contacts-top">
+        <div id="contact" className="h-fit scroll-mt-[50px] mt-30 mb-30">
+            <div className="h-22 w-250 mx-auto pb-35 flex-col justify-center text-center items-center content-center text-white max-sm:pb-60 gsap-contacts-top">
                 <p className="text-4xl pb-5">Contact</p>
-                <p className="w-[80%] text-2xl/9 mx-auto text-center">Don't hesitate to reach out to me for any inquiries or collaborations.</p>
+                <p className="w-full text-2xl/9 mx-auto text-center">Don't hesitate to reach out to me for any inquiries or collaborations.</p>
             </div>
 
             <div className="flex justify-center gap-40 max-sm:flex-col max-sm:items-center max-sm:gap-10">

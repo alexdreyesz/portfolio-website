@@ -1,7 +1,7 @@
 export default function ContactMessage() {
 
     return(
-        <div className="h-full w-full p-10 flex flex-col justify-evenly gap-5 backdrop-blur-md bg-white/0 glowing-border">
+        <div className="h-full w-full p-10 flex flex-col justify-evenly gap-5 backdrop-blur-md bg-white/0 glowing-border hover:scale-105 transition-transform duration-300 ease-in-out">
             <div className="flex flex-col gap-2 text-white">
                 <p>Name</p>
                 <form className="w-full border-2 rounded-2xl border-white p-3">
@@ -24,7 +24,7 @@ export default function ContactMessage() {
             </div>
 
             <div>
-                <button className="h-15 w-full mt-5 mb-5 rounded-2xl font-bold bg-white hover:scale-105 transition-all duration-300">Send Message</button>
+                <button className="h-15 w-full mt-5 mb-5 rounded-2xl font-bold bg-white hover:scale-105 transition-all duration-300 !cursor-pointer">Send Message</button>
             </div>
         </div>
     );

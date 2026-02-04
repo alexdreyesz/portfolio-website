@@ -1,6 +1,7 @@
 // Dynamically Import All Icons When Using npm build to be able to use it on githubpages
 const badgeIcons = import.meta.glob('../assets/icons/badges/**/*.@(svg|png)', { eager: true, import: 'default' });
 const logoIcons = import.meta.glob('../assets/icons/logo/*.@(png|svg)', { eager: true, import: 'default' });
+const projectThumbnails = import.meta.glob('../assets/thumbnails/**/*.@(png|jpeg)', { eager: true, import: 'default' });
 
 const songPath = import.meta.glob('../assets/music/**/*.mp3', { eager: true, import: 'default' });
 const songImage = import.meta.glob('../assets/music/**/*.jpg', { eager: true, import: 'default' });
@@ -46,7 +47,7 @@ export const frameworks = [
     // { text: "OpenGL", iconPath: badgeIcons['../assets/icons/badges/frameworks/opengl.svg'] as string },
     // { text: "Vue", iconPath: badgeIcons['../assets/icons/badges/frameworks/vuejs.svg'] as string },
     // { text: "Electron", iconPath: badgeIcons['../assets/icons/badges/frameworks/electron.svg'] as string },
-    // { text: "FastApi", iconPath: badgeIcons['../assets/icons/badges/frameworks/fastapi.svg'] as string },
+    { text: "FastApi", iconPath: badgeIcons['../assets/icons/badges/frameworks/fastapi.svg'] as string },
 ];
 
 export const libraries = [
@@ -87,6 +88,10 @@ export const developmentTools = [
     // { text: "Visual Studio", iconPath: badgeIcons['../assets/icons/badges/development-tools/visualstudio.svg'] as string },
     // { text: "Vite", iconPath: badgeIcons['../assets/icons/badges/development-tools/vite.svg'] as string },
     { text: "Vitejs", iconPath: badgeIcons['../assets/icons/badges/development-tools/vitejs.svg'] as string },
+    { text: "Vultr", iconPath: badgeIcons['../assets/icons/badges/development-tools/vultr.svg'] as string },
+    { text: "Twilio", iconPath: badgeIcons['../assets/icons/badges/development-tools/twilio.svg'] as string },
+    { text: "Resend", iconPath: badgeIcons['../assets/icons/badges/development-tools/resend.svg'] as string },
+    { text: "Supabase", iconPath: badgeIcons['../assets/icons/badges/development-tools/supabase.svg'] as string }
 ];
 
 export const designTools = [
@@ -147,7 +152,7 @@ export const cards = {
       imgUrl: logoIcons['../assets/icons/logo/ucf.png'] as string,
       date: "August 2022 - December 2025",
       title: "B.S. in Computer Science",
-      location: "Univerisity of Central Florida",
+      location: "University of Central Florida",
       description: "Currently pursuing a Bachelor of Science (B.S.) degree in Computer Science at the University of Central Florida (UCF). Building advanced knowledge in software development, algorithms, data structures, and systems programming while preparing for a career in the technology industry.",
     },
     
@@ -163,7 +168,7 @@ export const cards = {
       imgUrl: logoIcons['../assets/icons/logo/ucf-symbol.png'] as string,
       date: "August 2025 - December 2025",
       title: "Senior Design Teaching Assistant",
-      location: "Univerisity of Central Florida",
+      location: "University of Central Florida",
       description: "Assisting senior design students in managing their capstone projects, providing guidance on project planning, development, and execution. Facilitating collaboration and ensuring students meet academic and technical requirements for successful project completion.",
     },
 };
@@ -171,6 +176,7 @@ export const cards = {
 /* Constants For Projects Section */
 export const projects = {
     contactHub: {
+         thumbnail: projectThumbnails['../assets/thumbnails/contacthub/contacthub-home.png'] as string,
         imgUrl: logoIcons['../assets/icons/logo/contacthub.png'] as string,
         link: "https://github.com/alexdreyesz/ContactHub",
         title: "ContactHub",
@@ -189,6 +195,7 @@ export const projects = {
     },
 
     ucfGuessr: {
+        thumbnail: projectThumbnails['../assets/thumbnails/ucfmapguessr/ucfguessr-home.png'] as string,
         imgUrl: logoIcons['../assets/icons/logo/ucf-pegasus.png'] as string,
         link: "https://github.com/EvanPartidas/UCF-Map",
         title: "UCFMAP",
@@ -204,6 +211,7 @@ export const projects = {
     },
 
     portfolio: {
+        thumbnail: projectThumbnails['../assets/thumbnails/portfolio/portfolio-home.png'] as string,
         imgUrl: logoIcons['../assets/icons/logo/kingz.png'] as string,
         link: "https://github.com/alexdreyesz/Portfolio",
         title: "Portfolio",
@@ -221,6 +229,7 @@ export const projects = {
     },
 
     codelaboration: {
+        thumbnail: projectThumbnails['../assets/thumbnails/codelaboartion/codelaboration-home.png'] as string,
         imgUrl: logoIcons['../assets/icons/logo/codelaboration.svg'] as string,
         link: "https://github.com/alexdreyesz/Codelaboration",
         title: "Codelab",
@@ -239,6 +248,7 @@ export const projects = {
     },
 
     askPolaris: {
+        thumbnail: projectThumbnails['../assets/thumbnails/askpolaris/askpolaris-landing.png'] as string,
         imgUrl: logoIcons['../assets/icons/logo/askorb.png'] as string,
         link: "https://github.com/alexdreyesz",
         title: "AskPolaris",
@@ -253,6 +263,66 @@ export const projects = {
             {text: "Azure", badgeUrl: badgeIcons['../assets/icons/badges/databases/azure.svg'] as string},
             {text: "Flask", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/flask.svg'] as string},
             {text: "Chatgpt", badgeUrl: badgeIcons['../assets/icons/badges/ai-llm/chatgpt.svg'] as string},
+        ]
+    }, 
+
+    mainLine: {
+        thumbnail: projectThumbnails['../assets/thumbnails/mainline/mainline-home.png'] as string,
+        imgUrl: logoIcons['../assets/icons/logo/mainline-logo.png'] as string,
+        link: "https://github.com/alexdreyesz",
+        title: "MainLine",
+        date: "Jul 2025",
+        description: "Our team built mAIn Line, a web and mobile app that functions as a personal emergency assistant powered by Google Gemini. The app uses Twilio and Gemini to simulate emergency calls, interpret user medical data, and relay critical information to responders in real time.",
+        technologies: [
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
+            {text: "mongoDB", badgeUrl: badgeIcons['../assets/icons/badges/databases/mongodb.svg'] as string },
+            {text: "Twilio", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/twilio.svg'] as string },
+            {text: "Resend", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/resend.svg'] as string },
+            {text: "Gemini", badgeUrl: badgeIcons['../assets/icons/badges/ai-llm/google-gemini.svg'] as string },
+        ]
+    }, 
+
+    neighborly: {
+        thumbnail: projectThumbnails['../assets/thumbnails/neighborly/neighborly-home.jpeg'] as string,
+        imgUrl: logoIcons['../assets/icons/logo/neighborly-logo.png'] as string,
+        link: "https://github.com/alexdreyesz",
+        title: "Neighborly",
+        date: "Nov 2025",
+        description: "Developed Neighborly, a mutual-aid platform that makes helping neighbors simple. The backend matches offers with requests, while AI including Gemini highlights urgent local needs, creates community events, and guides residents to better understand and act on issues around them.",
+        technologies: [
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
+            { text: "mongoDB", badgeUrl: badgeIcons['../assets/icons/badges/databases/mongodb.svg'] as string },
+            {text: "Supabase", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/supabase.svg'] as string },
+            {text: "Python", badgeUrl: badgeIcons['../assets/icons/badges/languages/python.svg'] as string},
+            { text: "FastApi", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/fastapi.svg'] as string },
+            {text: "Gemini", badgeUrl: badgeIcons['../assets/icons/badges/ai-llm/google-gemini.svg'] as string },
+        ]
+    }, 
+
+    simplyLaw: {
+        thumbnail: projectThumbnails['../assets/thumbnails/simplylaw/simplylaw-home.jpeg'] as string,
+        imgUrl: logoIcons['../assets/icons/logo/simply-law.png'] as string,
+        link: "https://github.com/alexdreyesz",
+        title: "SimplyLaw",
+        date: "Oct 2025",
+        description: "Developing Simply Law, an AI-powered legal workflow platform that transforms emails, texts, call transcripts, and documents into actionable case insights using a multi-agent architecture with OCR, audio transcription, and intelligent intent routing. Integrated Twilio and Resend with deployment on Vultr to automate legal workflows and reduce administrative overhead.",
+        technologies: [
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
+            {text: "Python", badgeUrl: badgeIcons['../assets/icons/badges/languages/python.svg'] as string},
+            {text: "FastApi", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/fastapi.svg'] as string },
+            {text: "Vultr", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/vultr.svg'] as string },
+            {text: "Twilio", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/twilio.svg'] as string },
+            {text: "Resend", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/resend.svg'] as string },
+            {text: "Gemini", badgeUrl: badgeIcons['../assets/icons/badges/ai-llm/google-gemini.svg'] as string },
         ]
     }, 
 };
