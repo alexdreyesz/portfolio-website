@@ -1,4 +1,5 @@
 import IconShowCaseProject from "./IconShowCaseProject";
+import { useInView } from "../../../hooks/useInView";
 
 interface ProjectCardProps {
     thumbnail: string;
@@ -13,8 +14,17 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCards({thumbnail, imgUrl, link, date, title, description, technologies, size, extra}: ProjectCardProps) {
+    
+    const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
+    
     return (
-        <div className="min-h-215 h-fit w-100 rounded-2xl border-1 border-gray-800 glowing-border hover:scale-105 transition-transform duration-300 ease-in-out !cursor-pointer">
+        <div  
+            className="min-h-215 h-fit w-100 rounded-2xl border-1 border-gray-800 glowing-border hover:scale-105 transition-transform duration-300 ease-in-out !cursor-pointer"
+            ref={ref}
+            style={{
+            animationPlayState: inView ? "running" : "paused"
+            }}
+        >
             <div className="h-full rounded-2xl text-white content-center items-center !cursor-pointer ">
                 
                 <div className="w-full h-full z-[-1] absolute rounded-2xl backdrop-blur-md bg-white/0"></div>
@@ -25,7 +35,13 @@ export default function ProjectCards({thumbnail, imgUrl, link, date, title, desc
             
                 <div className=" flex">
                     <div className="h-30 w-30 ml-2 mr-4 flex justify-center items-center content-center">
-                        <img src={imgUrl} className={`${size} w-auto animation-rotate-y ${extra} transition-transform duration-300 ease-in-out`}/>
+                        <img
+                        src={imgUrl}
+                        className={`${size} w-auto animation-rotate-y ${extra}`}
+                        style={{
+                        animationPlayState: inView ? "running" : "paused"
+                        }}
+                    />
                     </div>
 
                     <div className="w-fit relative top-1 right-1 flex-col justify-center items-center content-center">

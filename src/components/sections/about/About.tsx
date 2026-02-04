@@ -3,6 +3,8 @@ import GSAPScrollBehaviorAbout from "../../../utils/gsapScrollBehaviorAbout"
 import PortraitAbout from "./PortraitAbout";
 import CarouselAbout from "./CarouselAbout";
 
+import { useInView } from "../../../hooks/useInView";
+
 
 // Images
 import portraitFormal from '../../../assets/images/portrait-formal.png'
@@ -28,6 +30,8 @@ export default function About() {
     GSAPScrollBehaviorAbout();
 
     let introduction = "As stated before, my name is Alex D. Reyes, and I’m a Computer Science graduate from the University of Central Florida. I collaborated with the U.S. Space Force to develop AskPolaris, an AI-powered IT solution tool, and I also served as a Teaching Assistant for UCF’s Senior Design course, where I helped students manage their capstone projects. Outside of tech, I enjoy listening to music, playing video games, exploring game development, playing football, archery, and spending quality time with friends and family.";
+
+    const { ref, inView } = useInView<HTMLDivElement>(0.1); // 20% visible = active
 
     return(
         <div id="welcome" className="h-fit mt-20 flex-col justify-items-center scroll-mt-14 max-sm:h-fit max-sm:mb-15">
@@ -153,7 +157,11 @@ export default function About() {
             </div>
 
             <div className="carousel-banner gsap-about-top-portrait mt-15">
-                <div className="carousel-slider" style={{"--quantity": 8} as React.CSSProperties}>
+                <div 
+                    className="carousel-slider" 
+                    ref={ref}
+                    style={{"--quantity": 8, animationPlayState: inView ? "running" : "paused"} as React.CSSProperties}
+                >
                     <CarouselAbout index="1" portrait={mollyPurple} title="Molly Purple" body="Molly with a nice purple ribbon" />  
                     <CarouselAbout index="2" portrait={mollyAsking} title="Molly Asking" body="Molly asking for a treat" />  
                     <CarouselAbout index="3" portrait={mollyBeer} title="Molly Beer" body="Molly joining the party" />  

@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useInView } from "../../../hooks/useInView";
 
 interface PortraitProps {
     portrait: string,
@@ -9,6 +10,8 @@ interface PortraitProps {
 export default function PortraitAbout({ portrait, title, body }: PortraitProps) {
     const [hovered, setHovered] = useState(false);
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
 
     return (
         <div  
@@ -22,6 +25,11 @@ export default function PortraitAbout({ portrait, title, body }: PortraitProps) 
                 timeoutRef.current = setTimeout(() => {
                     setHovered(false);    
                 }, 100);
+            }}
+
+            ref={ref}
+            style={{
+            animationPlayState: inView ? "running" : "paused"
             }}
         >
             <img src={portrait} className="w-full h-full object-fill relative rounded-2xl max-sm:h-[55vh] max-sm:w-auto"/>

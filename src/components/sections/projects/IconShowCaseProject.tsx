@@ -9,7 +9,6 @@ export default function IconShowCase( { CategoryObject }: IconShowCasePrompts ) 
     const [hovered, setHovered] = useState<number | null>(null);
     
     return(
-        
             <div className="flex flex-wrap flex-row pt-2 gap-3 ml-6 mr-6 mb-7"> 
                 {CategoryObject.map((icon: { text: string, badgeUrl: string }, index: number) => (
                     <div key={index} className="relative flex-col justify-center items-center">

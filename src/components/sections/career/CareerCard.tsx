@@ -1,3 +1,5 @@
+import { useInView } from "../../../hooks/useInView";
+
 interface CareerCardProps {
     imgUrl: string;
     date: string;
@@ -8,8 +10,16 @@ interface CareerCardProps {
 }
 
 export default function CareerCard({imgUrl, date, title, location, description, size}: CareerCardProps) {
+    
+    const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
+    
     return (
-        <div className="h-fit w-150 rounded-2xl border-1 border-gray-800 max-sm:w-auto max-sm:relative max-sm:right-[12%] glowing-border hover:scale-105 transition-transform duration-300 ease-in-out">
+        <div className="h-fit w-150 rounded-2xl border-1 border-gray-800 max-sm:w-auto max-sm:relative max-sm:right-[12%] glowing-border hover:scale-105 transition-transform duration-300 ease-in-out"
+            ref={ref}
+            style={{
+                animationPlayState: inView ? "running" : "paused"
+            }}
+        >
             <div className="relative left-1.5 bottom-0.5 grid grid-rows-2 text-white content-center items-center">
                 
                 <div className="w-full h-full z-[-1] absolute right-[6px] top-[2px]  rounded-2xl  backdrop-blur-md bg-white/0"></div>

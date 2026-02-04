@@ -1,7 +1,17 @@
+import { useInView } from "../../../hooks/useInView";
+
 export default function ContactMessage() {
 
+    const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
+
     return(
-        <div className="h-full w-full p-10 flex flex-col justify-evenly gap-5 backdrop-blur-md bg-white/0 glowing-border hover:scale-105 transition-transform duration-300 ease-in-out">
+        <div 
+            className="h-full w-full p-10 flex flex-col justify-evenly gap-5 backdrop-blur-md bg-white/0 glowing-border hover:scale-105 transition-transform duration-300 ease-in-out"
+            ref={ref}
+            style={{
+                animationPlayState: inView ? "running" : "paused"
+            }}
+        >
             <div className="flex flex-col gap-2 text-white">
                 <p>Name</p>
                 <form className="w-full border-2 rounded-2xl border-white p-3">

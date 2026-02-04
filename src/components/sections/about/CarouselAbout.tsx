@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useInView } from "../../../hooks/useInView";
 
 interface CarouselProps {
     index: string,
@@ -11,11 +12,14 @@ export default function CarouselAbout({ index,portrait, title, body }: CarouselP
     const [hovered, setHovered] = useState(false);
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+    const { ref, inView } = useInView<HTMLDivElement>(1); // 20% visible = active
+
     return (
         <div  
             className={"relative h-120 w-auto flex rounded-2xl glowing-border max-sm:h-fit max-sm:w-auto max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out carousel-slider-item"}
 
-            style={{"--position": index} as React.CSSProperties}
+            ref={ref}
+            style={ {"--position": index, animationPlayState: inView ? "running" : "paused"} as React.CSSProperties }
 
             onMouseEnter={() => {
             setHovered(true); 

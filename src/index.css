@@ -162,18 +162,18 @@ img {
 }
 
 
+/*** Glowing Border Class ***/
+.glowing-border {
+  position: relative;
+  border: solid 2px transparent;
+  border-radius: 1em;
+}
+
 /* Register Custom Property So It Can Animate The Glowing Border */
 @property --alpha {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
-}
-
-/* Glowing Border Class */
-.glowing-border {
-  position: relative;
-  border: solid 2px transparent;
-  border-radius: 1em;
 }
 
 .glowing-border::before,
@@ -209,6 +209,8 @@ img {
   animation: rotate 6s linear infinite;
 
   content: "";
+
+  animation-play-state: inherit;
 }
 
 .glowing-border::after {
@@ -251,6 +253,7 @@ img {
     transform-style: preserve-3d;
     transform: perspective(1000px);
     animation: sliderRotate 55s linear infinite;
+    animation-play-state: inherit;
 }
 
 @keyframes sliderRotate {
