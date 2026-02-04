@@ -21,8 +21,8 @@ function Header() {
                 <a className="cursor-pointer interactive-animation" href="#welcome"><p className="hover:scale-110">Welcome</p></a>
                 <a className="cursor-pointer interactive-animation" href="#about"><p className="hover:scale-110">About</p></a>
                 <a className="cursor-pointer interactive-animation" href="#career"><p className="hover:scale-110">Career</p></a>
-                <a className="cursor-pointer interactive-animation" href="#skills"><p className="hover:scale-110">Skills</p></a>
                 <a className="cursor-pointer interactive-animation" href="#projects"><p className="hover:scale-110">Projects</p></a>
+                <a className="cursor-pointer interactive-animation" href="#skills"><p className="hover:scale-110">Skills</p></a>
                 <a className="cursor-pointer interactive-animation" href="#contact"><p className="hover:scale-110">Contact</p></a>
                 <PlayMusic/>
             </nav>
@@ -41,8 +41,8 @@ function Header() {
                     <a href="#welcome" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>Welcome</a>
                     <a href="#about" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>About</a>
                     <a href="#career" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>Career</a>
-                    <a href="#skills" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>Skills</a>
                     <a href="#projects" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>Projects</a>
+                    <a href="#skills" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>Skills</a>
                     <a href="#contact" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)}>Contact</a>
                 </div>
                 )}
