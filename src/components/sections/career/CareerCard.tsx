@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useInView } from "../../../hooks/useInView";
 
 interface CareerCardProps {
@@ -10,11 +11,20 @@ interface CareerCardProps {
 }
 
 export default function CareerCard({imgUrl, date, title, location, description, size}: CareerCardProps) {
-    
+    const [delayedInView, setDelayedInView] = useState(false);
     const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
+
+    useEffect(() => {
+        if (inView) {
+            const id = setTimeout(() => setDelayedInView(true), 1750);
+            return () => clearTimeout(id);
+        } else {
+            setDelayedInView(false);
+        }
+    }, [inView]);
     
     return (
-        <div className={`h-fit w-150 rounded-2xl max-sm:w-auto max-sm:relative max-sm:right-[12%] hover:scale-105 transition-transform duration-300 ease-in-out ${inView ? "glowing-border" : "glow-disabled"}`}
+        <div className={`h-fit w-150 border-1 border-gray-800 rounded-2xl max-sm:w-auto max-sm:relative max-sm:right-[12%] hover:scale-105 transition-transform duration-300 ease-in-out ${delayedInView ? "glowing-border" : "glow-disabled"}`}
             ref={ref}
             style={{
                 animationPlayState: inView ? "running" : "paused"

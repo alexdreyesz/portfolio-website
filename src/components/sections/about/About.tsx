@@ -131,7 +131,7 @@ export default function About() {
                     <p className="text-2xl/9 px-20 max-sm:px-6">This is my family. They sacrificed so much to help me become the professional I am today, and I’m committed to doing everything I can to take care of them. I’ll keep working hard, earning my place wherever I need to, so I can support them the way they’ve supported me. I love them deeply.</p>
                 </div>
 
-                <div className="gsap-about-right-portrait">
+                <div className="gsap-about-right-portrait max-sm:mt-10">
                     <PortraitAbout portrait={graduationFamily} title="Family" body="Me celebrating my graduation with my family." />    
                 </div>
             </div>

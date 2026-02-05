@@ -1,4 +1,5 @@
 import IconShowCaseProject from "./IconShowCaseProject";
+import { useState, useEffect } from "react";
 import { useInView } from "../../../hooks/useInView";
 
 interface ProjectCardProps {
@@ -14,20 +15,29 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCards({thumbnail, imgUrl, link, date, title, description, technologies, size, extra}: ProjectCardProps) {
-    
+    const [delayedInView, setDelayedInView] = useState(false);
     const { ref, inView } = useInView<HTMLDivElement>(0.1); // 20% visible = active
+
+    useEffect(() => {
+        if (inView) {
+            const id = setTimeout(() => setDelayedInView(true), 1750);
+            return () => clearTimeout(id);
+        } else {
+            setDelayedInView(false);
+        }
+    }, [inView]);
     
     return (
         <div  
-            className={`min-h-215 h-fit w-100 rounded-2xl border-1 border-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out !cursor-pointer ${inView ? "glowing-border" : "glow-disabled"}`}
+            className={`min-h-215 h-fit w-100 rounded-2xl border-1 border-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out !cursor-pointer ${delayedInView ? "glowing-border" : "glow-disabled overflow-hidden"}`}
             ref={ref}
             style={{
             animationPlayState: inView ? "running" : "paused"
             }}
         >
-            <div className="h-full rounded-2xl text-white content-center items-center !cursor-pointer ">
+            <div className="h-full w-full rounded-2xl text-white content-center items-center !cursor-pointer !overflow-hidden">
                 
-                <div className="w-full h-full z-[-1] absolute rounded-2xl backdrop-blur-md bg-white/0"></div>
+                <div className={`w-full h-full z-[-1] absolute rounded-2xl backdrop-blur-md bg-white/0 ${inView ? "" : "bottom-[1px]"}`}></div>
                 
                 <div className="h-50 w-full overflow-hidden rounded-t-2xl">
                     <img src={thumbnail} className="w-full h-full object-cover"/>   

@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useInView } from "../../../hooks/useInView";
 
 interface CarouselProps {
@@ -11,12 +11,22 @@ interface CarouselProps {
 export default function CarouselAbout({ index,portrait, title, body }: CarouselProps) {
     const [hovered, setHovered] = useState(false);
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const [delayedInView, setDelayedInView] = useState(false);
 
     const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
 
+    useEffect(() => {
+        if (inView) {
+            const id = setTimeout(() => setDelayedInView(true), 1750);
+            return () => clearTimeout(id);
+        } else {
+            setDelayedInView(false);
+        }
+    }, [inView]);
+
     return (
         <div  
-            className={`relative h-120 w-auto flex rounded-2xl max-sm:h-fit max-sm:w-auto max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out carousel-slider-item ${inView ? "glowing-border" : "glow-disabled"}`}
+            className={`relative h-120 w-auto flex border-1 border-gray-800 rounded-2xl max-sm:h-fit max-sm:w-auto max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out carousel-slider-item ${delayedInView ? "glowing-border" : "glow-disabled"}`}
 
             ref={ref}
             style={ {"--position": index, animationPlayState: inView ? "running" : "paused"} as React.CSSProperties }

@@ -220,7 +220,7 @@ img {
 /* When card is out of view completely remove the effect */
 .glow-disabled::before,
 .glow-disabled::after {
-  display: none !important;
+    display: none !important;
 }
 
 @keyframes rotate {
@@ -235,8 +235,13 @@ img {
     position: relative;
     border: solid 3px rgb(255, 255, 255);
     border-radius: 1em;
-    }
-  
+  }
+
+  .glow-disabled {
+    position: relative;
+    border: solid 3px rgb(255, 255, 255);
+    border-radius: 1em;
+  }
   
   .glowing-border::before,
   .glowing-border::after {

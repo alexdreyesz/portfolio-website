@@ -1,12 +1,22 @@
 import { useInView } from "../../../hooks/useInView";
+import { useState, useEffect } from "react";
 
 export default function ContactMessage() {
 
     const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
+    const [delayedInView, setDelayedInView] = useState(false);
 
+    useEffect(() => {
+        if (inView) {
+            const id = setTimeout(() => setDelayedInView(true), 1750);
+            return () => clearTimeout(id);
+        } else {
+            setDelayedInView(false);
+        }
+    }, [inView]);
     return(
         <div 
-            className={`h-full w-full p-10 flex flex-col justify-evenly gap-5 backdrop-blur-md bg-white/0 hover:scale-105 transition-transform duration-300 ease-in-out ${inView ? "glowing-border" : "glow-disabled"}`}
+            className={`h-full w-full p-10 flex flex-col border-1 border-gray-800 rounded-2xl justify-evenly gap-5 backdrop-blur-md bg-white/0 hover:scale-105 transition-transform duration-300 ease-in-out ${delayedInView ? "glowing-border" : "glow-disabled"}`}
             ref={ref}
             style={{
                 animationPlayState: inView ? "running" : "paused"
