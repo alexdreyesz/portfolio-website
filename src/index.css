@@ -234,6 +234,11 @@ img {
 
     animation: rotate 10s linear infinite;
   }
+
+  .glowing-border::before,
+  .glowing-border::after {
+    display: none;
+  }
 }
 
 /*** Carousel 3D Styles ***/

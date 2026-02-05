@@ -72,7 +72,7 @@ export default function About() {
                 </div>
 
                 <div className="gsap-about-right">
-                    <PortraitAbout portrait={family} title="Arrival" body="First Day as an international student" />
+                    <PortraitAbout portrait={family} title="Arrival" body="First Day as an international student." />
                 </div>
 
             </div>
@@ -114,7 +114,7 @@ export default function About() {
             {/*Hackathon Section*/}
             <div className="w-full flex justify-evenly text-white mt-10 mb-20 max-sm:flex-col max-sm:gap-0 max-sm:justify-center max-sm:items-center gsap-about-down">         
                 <div className="gsap-about-left">
-                    <PortraitAbout portrait={hackathon} title="Hackathon" body="Me and my team Knight Hacks 8. Winners 1st place Morgan&Morgan Challenge" />    
+                    <PortraitAbout portrait={hackathon} title="Hackathon" body="Me and my team Knight Hacks 8. Winners 1st place Morgan&Morgan Challenge." />    
                 </div>
 
                 <div className="w-[50%] min-w-100 gsap-about-right max-sm:w-auto">
@@ -132,16 +132,15 @@ export default function About() {
                 </div>
 
                 <div className="gsap-about-right-portrait">
-                    <PortraitAbout portrait={graduationFamily} title="Molly" body="She is My precious dog. She was a part of our family on 2020." />    
+                    <PortraitAbout portrait={graduationFamily} title="Family" body="Me celebrating my graduation with my family." />    
                 </div>
             </div>
 
-            {/*Graduation Section*/}
+            {/*Molly Section*/}
             <div className="w-full flex justify-evenly text-white mt-10 mb-20 max-sm:flex-col max-sm:gap-0 max-sm:justify-center max-sm:items-center gsap-about-down">         
                 <div className="gsap-about-left">
-                    <PortraitAbout portrait={molly} title="Graduation" body="Graduated from University of Central Florida with a B.S. in Computer Science." />    
+                    <PortraitAbout portrait={molly} title="Molly" body="A precious member of my family." />    
                 </div>
-
                 <div className="w-[50%] min-w-100 gsap-about-right max-sm:w-auto">
                     <p className="text-5xl text-center pb-10">Dearly Beloved</p>
 
@@ -162,14 +161,14 @@ export default function About() {
                     ref={ref}
                     style={{"--quantity": 8, animationPlayState: inView ? "running" : "paused"} as React.CSSProperties}
                 >
-                    <CarouselAbout index="1" portrait={mollyPurple} title="Molly Purple" body="Molly with a nice purple ribbon" />  
-                    <CarouselAbout index="2" portrait={mollyAsking} title="Molly Asking" body="Molly asking for a treat" />  
-                    <CarouselAbout index="3" portrait={mollyBeer} title="Molly Beer" body="Molly joining the party" />  
-                    <CarouselAbout index="4" portrait={mollyCar} title="Molly Car" body="Molly going to the salon" />    
-                    <CarouselAbout index="5" portrait={mollyNice} title="Molly Nice" body="Molly looking nice" />   
-                    <CarouselAbout index="6" portrait={mollyTree} title="Molly Tree" body="Molly with a beautiful macuelizo tree" />
-                    <CarouselAbout index="7" portrait={mollyPerspective} title="Molly Perspective" body="Molly from a unique perspective" />
-                    <CarouselAbout index="8" portrait={mollyCute} title="Molly Cute" body="Molly looking cute" />
+                    <CarouselAbout index="1" portrait={mollyPurple} title="Molly Purple" body="Molly with a nice purple ribbon." />  
+                    <CarouselAbout index="2" portrait={mollyAsking} title="Molly Asking" body="Molly asking for a treat." />  
+                    <CarouselAbout index="3" portrait={mollyBeer} title="Molly Beer" body="Molly joining the party." />  
+                    <CarouselAbout index="4" portrait={mollyCar} title="Molly Car" body="Molly going to the salon." />    
+                    <CarouselAbout index="5" portrait={mollyNice} title="Molly Cute" body="Molly looking cute." />   
+                    <CarouselAbout index="6" portrait={mollyTree} title="Molly Tree" body="Molly with a beautiful macuelizo tree." />
+                    <CarouselAbout index="7" portrait={mollyPerspective} title="Molly Perspective" body="Molly from a unique perspective." />
+                    <CarouselAbout index="8" portrait={mollyCute} title="Molly pretty" body="Molly looking pretty." />
                 </div>
             </div>
      

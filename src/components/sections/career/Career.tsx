@@ -12,7 +12,7 @@ export default function Career() {
     GSAPScrollBehaviorCareer();
 
     return (
-        <div id="career" className="h-fit scroll-mt-[-30px] mt-25">
+        <div id="career" className="h-fit scroll-mt-[50px] mt-25">
 
             <div className="h-22 w-250 pb-45 flex-col mx-auto justify-center text-center items-center content-center text-white gsap-career-title max-sm:pb-60 max-sm:w-auto">
                 <p className="text-4xl pb-5">Career</p>
