@@ -31,7 +31,7 @@ export default function CarouselAbout({ index,portrait, title, body }: CarouselP
                 }, 100);
             }}
         >
-            <img src={portrait} className="w-full h-full object-fill relative rounded-2xl max-sm:h-[55vh] max-sm:w-auto"/>
+            <img src={portrait} className="w-full h-full object-fill relative rounded-2xl max-sm:h-100"/>
 
             { hovered && (
                 <div className="text-white">

@@ -42,7 +42,7 @@ export default function BadgeIcon({badge3DURL, positionXYZ, rotationXYZ, animati
         const badge = useGLTF(badge3DURL);
         const ref = useRef<THREE.Object3D>(null!);
 
-        useFrame((_, delta) => {
+        useFrame(() => {
             if (!active) return;
 
             if (ref.current) {

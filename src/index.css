@@ -273,12 +273,18 @@ img {
     translateZ(700px);
 }
 
-@media (max-width: 1441px) {
+@media (max-width: 1601px) {
     .carousel-slider-item {
         position: absolute;
         inset: 0 0 0 0;
         transform: 
         rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) 
         translateZ(600px);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-slider {
+        width: 300px;
     }
 }

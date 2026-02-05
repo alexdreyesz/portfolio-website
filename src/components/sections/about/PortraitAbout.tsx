@@ -15,7 +15,7 @@ export default function PortraitAbout({ portrait, title, body }: PortraitProps) 
 
     return (
         <div  
-            className="relative h-120 w-auto max-w-150 flex rounded-2xl glowing-border max-sm:h-fit max-sm:w-auto max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out" 
+            className="relative h-120 w-auto max-w-150 flex rounded-2xl glowing-border max-sm:h-fit max-sm:mx-6 max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out" 
 
             onMouseEnter={() => {
             setHovered(true); 

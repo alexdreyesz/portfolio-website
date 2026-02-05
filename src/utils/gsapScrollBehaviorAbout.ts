@@ -75,7 +75,7 @@ export default function GSAPScrollBehaviorAbout() {
                 ease: "power2.out",
                 scrollTrigger: {
                 trigger: text as HTMLElement,
-                start: "top 90%",
+                start: "top 100%",
                 toggleActions: "play none none reverse",
                 }
             });

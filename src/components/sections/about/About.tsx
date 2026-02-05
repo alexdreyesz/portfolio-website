@@ -78,7 +78,7 @@ export default function About() {
             </div>
 
             {/*About Me Section*/}
-            <div id="about" className="h-22 w-250 pt-30 pb-40 scroll-mt-[-70px] flex-col justify-center text-center items-center content-center text-white max-sm:mb-0  max-sm:w-auto">
+            <div id="about" className="h-22 w-250 pt-30 pb-40 scroll-mt-[-70px] flex-col justify-center text-center items-center content-center text-white max-sm:pt-0 max-sm:mb-0  max-sm:w-auto">
                 <div className="w-auto gsap-about-top">
                     <p className="text-4xl pb-5">About Me</p>
                     <p className="w-full text-2xl/9 mx-auto text-center">Here’s a little bit about my life and background.</p>
@@ -106,7 +106,7 @@ export default function About() {
                     <p className="text-2xl/9 px-20 max-sm:px-6">I was part of Knight Hacks, where I served as a Workshop Director and mentor. I helped run events, led workshops to teach technical topics, and supported other students as they learned and built projects. Through the club, I also strengthened my network while contributing to a more engaged and collaborative community.</p>
                 </div>
 
-                <div className="gsap-about-right-portrait">
+                <div className="gsap-about-right-portrait max-sm:mt-10">
                     <PortraitAbout portrait={knightHacks} title="KnightHacks" body="2026 KnightHacks banquet event." />    
                 </div>
             </div>
@@ -150,13 +150,13 @@ export default function About() {
             </div>
 
             {/*Carrousel Section*/}
-            <div className="h-22 w-auto flex-col justify-center text-center items-center content-center text-white max-sm:pb-70">
+            <div className="h-22 w-auto flex-col justify-center text-center items-center content-center text-white max-sm:pb-20 max-sm:pt-30">
                 <div className="gsap-about-top">
                     <p className="text-4xl pb-5">Molly Showcase</p>
                 </div>
             </div>
 
-            <div className="carousel-banner gsap-about-top-portrait mt-15">
+            <div className="carousel-banner gsap-about-top-portrait max-sm:mt-0">
                 <div 
                     className="carousel-slider" 
                     ref={ref}

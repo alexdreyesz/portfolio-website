@@ -14,7 +14,7 @@ export default function Career() {
     return (
         <div id="career" className="h-fit scroll-mt-[-30px] mt-25">
 
-            <div className="h-22 w-250 pb-45 flex-col mx-auto justify-center text-center items-center content-center text-white gsap-career-title max-sm:pb-90">
+            <div className="h-22 w-250 pb-45 flex-col mx-auto justify-center text-center items-center content-center text-white gsap-career-title max-sm:pb-60 max-sm:w-auto">
                 <p className="text-4xl pb-5">Career</p>
                 <p className="w-full text-2xl/9 mx-auto text-center">These are some of the highlights of my career journey. I’ve been fortunate to pursue higher education and to collaborate with incredible companies, individuals, and teams.</p>
             </div>

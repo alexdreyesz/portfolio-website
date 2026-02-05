@@ -11,9 +11,9 @@ export default function IconShowCaseSkills( { CategoryName, CategoryObject, GSAP
     const [hovered, setHovered] = useState<number | null>(null);
     
     return(
-        <div className={`w-250 h-fit flex-col mt-10 text-2xl text-white gsap-skills-${GSAPDirection} max-sm:w-auto max-sm:pl-6 max-sm:pr-6 max-sm:justify-self-start`}>
+        <div className={`w-250 h-fit flex-col mt-10 text-2xl text-white gsap-skills-${GSAPDirection} max-sm:w-auto max-sm:pl-6 max-sm:pr-6 max-sm:justify-self-start max-sm:mt-0`}>
             <p>{CategoryName}:</p>
-            <div className="flex flex-wrap flex-row pt-2 gap-3 max-sm:gap-10 max-sm:pb-10">
+            <div className="flex flex-wrap flex-row pt-2 gap-3 max-sm:gap-5 max-sm:pb-3">
                 
             {CategoryObject.map((icon: { iconPath: string, text: string}, index: number) => (
                 <div key={index} className="relative flex-col justify-center items-center">

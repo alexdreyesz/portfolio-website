@@ -12,7 +12,13 @@ const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath('/draco/');
 (GLTFLoader.prototype as unknown as { setDRACOLoader: (loader: DRACOLoader) => void }).setDRACOLoader(dracoLoader);
 
-function Model() {
+import { useInView } from "../../../hooks/useInView";
+
+interface ModelProps {
+  active: boolean;
+}
+
+function Model({ active }: ModelProps) {
     useGLTF.preload('/models/extra/earth-compressed.glb');
     const { scene } = useGLTF('/models/extra/earth-compressed.glb');
     
@@ -23,13 +29,15 @@ function Model() {
     const initialRotation = useRef<THREE.Euler>(new THREE.Euler(0.4, -0.9, 0));
     
     useFrame((_, delta) => {
-    time.current += delta;
+        if (!active) return;
 
-    if (ref.current) {
-        ref.current.rotation.x = initialRotation.current.x;
-        ref.current.rotation.y = initialRotation.current.y + time.current * 0.05;
-        ref.current.rotation.z = initialRotation.current.z;
-    }
+        time.current += delta;
+
+        if (ref.current) {
+            ref.current.rotation.x = initialRotation.current.x;
+            ref.current.rotation.y = initialRotation.current.y + time.current * 0.05;
+            ref.current.rotation.z = initialRotation.current.z;
+        }
     });
 
     return (
@@ -42,26 +50,32 @@ function Model() {
     );
 }
 
-export default function SunnyBoat() {
+export default function Earth() {
+
+    const { ref, inView } = useInView<HTMLDivElement>(0.05);
 
     return (
-        <figure className="h-[60%]">
-        <Canvas camera={{position: [0, 0, 15], fov: 35}}>
-            <ambientLight intensity={1} color="#988ad4" />
-            <directionalLight position={[5, 5, 5]} intensity={5}/>
-            <directionalLight position={[-5, 5, -5]} intensity={5} />
-           
-            {/*
-            <OrbitControls 
-                enablePan={false} 
-                minDistance={5} 
-                maxDistance={2000}
-            />
-           */}
+        <figure className="h-[60%]" ref={ref}>
 
-            <Model/>
+        { inView && (
+            <Canvas camera={{position: [0, 0, 15], fov: 35}}>
+                <ambientLight intensity={1} color="#988ad4" />
+                <directionalLight position={[5, 5, 5]} intensity={5}/>
+                <directionalLight position={[-5, 5, -5]} intensity={5} />
+            
+                {/*
+                <OrbitControls 
+                    enablePan={false} 
+                    minDistance={5} 
+                    maxDistance={2000}
+                />
+            */}
 
-        </Canvas>
+                <Model active={inView} />
+
+            </Canvas>
+        )}
+
         </figure>
     );
 }

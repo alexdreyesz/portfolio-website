@@ -8,7 +8,7 @@ function Home() {
         <section id="home" className="h-screen pt-12 relative overflow-hidden scroll-mt-12">
 
             <div className="absolute w-full flex justify-end max-sm:top-70">
-                <div className="h-100 w-100 relative left-135 bottom-10 z-[-1] max-sm:left-110">
+                <div className="h-100 w-100 relative left-135 bottom-10 z-[-1] max-sm:left-103">
                     <Cherokee/>
                 </div>
 

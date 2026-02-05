@@ -10,7 +10,7 @@ export default function Projects() {
     return (
         <div id="projects" className="h-fit mt-30 scroll-mt-12 max-sm:h-fit max-sm:pb-25">
 
-            <div className="h-22 w-250 mx-auto pb-30 flex-col justify-center text-center items-center content-center text-white gsap-projects-top max-sm:pb-70">
+            <div className="h-22 w-250 mx-auto pb-30 flex-col justify-center text-center items-center content-center text-white gsap-projects-top max-sm:pb-50 max-sm:w-auto">
                 <p className="text-4xl pb-5">Projects</p>
                 <p className="w-full text-2xl/9 mx-auto text-center">Below are some of the most impactful projects that reflect the skills and experience I’ve developed throughout my journey.</p>
             </div>
