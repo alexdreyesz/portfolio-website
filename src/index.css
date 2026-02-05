@@ -231,7 +231,12 @@ img {
 
 /* Removes glow on mobile as it causes issues */ 
 @media (max-width: 768px) {
-
+  .glowing-border {
+    position: relative;
+    border: solid 3px rgb(255, 255, 255);
+    border-radius: 1em;
+    }
+  
   
   .glowing-border::before,
   .glowing-border::after {
@@ -243,7 +248,10 @@ img {
     animation: rotate 10s linear infinite;
   }
 
-
+  .glowing-border::before,
+  .glowing-border::after {
+    display: none;
+  }
 }
 
 /*** Carousel 3D Styles ***/
