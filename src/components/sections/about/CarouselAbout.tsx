@@ -12,11 +12,11 @@ export default function CarouselAbout({ index,portrait, title, body }: CarouselP
     const [hovered, setHovered] = useState(false);
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    const { ref, inView } = useInView<HTMLDivElement>(1); // 20% visible = active
+    const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
 
     return (
         <div  
-            className={"relative h-120 w-auto flex rounded-2xl glowing-border max-sm:h-fit max-sm:w-auto max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out carousel-slider-item"}
+            className={`relative h-120 w-auto flex rounded-2xl max-sm:h-fit max-sm:w-auto max-sm:mb-20 hover:scale-105 transition-transform duration-300 ease-in-out carousel-slider-item ${inView ? "glowing-border" : "glow-disabled"}`}
 
             ref={ref}
             style={ {"--position": index, animationPlayState: inView ? "running" : "paused"} as React.CSSProperties }

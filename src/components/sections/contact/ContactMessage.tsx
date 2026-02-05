@@ -6,7 +6,7 @@ export default function ContactMessage() {
 
     return(
         <div 
-            className="h-full w-full p-10 flex flex-col justify-evenly gap-5 backdrop-blur-md bg-white/0 glowing-border hover:scale-105 transition-transform duration-300 ease-in-out"
+            className={`h-full w-full p-10 flex flex-col justify-evenly gap-5 backdrop-blur-md bg-white/0 hover:scale-105 transition-transform duration-300 ease-in-out ${inView ? "glowing-border" : "glow-disabled"}`}
             ref={ref}
             style={{
                 animationPlayState: inView ? "running" : "paused"

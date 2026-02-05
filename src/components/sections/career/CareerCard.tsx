@@ -14,7 +14,7 @@ export default function CareerCard({imgUrl, date, title, location, description, 
     const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
     
     return (
-        <div className="h-fit w-150 rounded-2xl glowing-border max-sm:w-auto max-sm:relative max-sm:right-[12%] hover:scale-105 transition-transform duration-300 ease-in-out"
+        <div className={`h-fit w-150 rounded-2xl max-sm:w-auto max-sm:relative max-sm:right-[12%] hover:scale-105 transition-transform duration-300 ease-in-out ${inView ? "glowing-border" : "glow-disabled"}`}
             ref={ref}
             style={{
                 animationPlayState: inView ? "running" : "paused"

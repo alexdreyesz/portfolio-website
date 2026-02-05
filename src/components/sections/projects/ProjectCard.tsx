@@ -15,11 +15,11 @@ interface ProjectCardProps {
 
 export default function ProjectCards({thumbnail, imgUrl, link, date, title, description, technologies, size, extra}: ProjectCardProps) {
     
-    const { ref, inView } = useInView<HTMLDivElement>(0.2); // 20% visible = active
+    const { ref, inView } = useInView<HTMLDivElement>(0.1); // 20% visible = active
     
     return (
         <div  
-            className="min-h-215 h-fit w-100 rounded-2xl border-1 border-gray-800 glowing-border hover:scale-105 transition-transform duration-300 ease-in-out !cursor-pointer"
+            className={`min-h-215 h-fit w-100 rounded-2xl border-1 border-gray-800 hover:scale-105 transition-transform duration-300 ease-in-out !cursor-pointer ${inView ? "glowing-border" : "glow-disabled"}`}
             ref={ref}
             style={{
             animationPlayState: inView ? "running" : "paused"

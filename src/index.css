@@ -217,6 +217,12 @@ img {
   filter: blur(1.2em);
 }
 
+/* When card is out of view completely remove the effect */
+.glow-disabled::before,
+.glow-disabled::after {
+  display: none !important;
+}
+
 @keyframes rotate {
   to {
     --alpha: 1turn;
@@ -225,6 +231,8 @@ img {
 
 /* Removes glow on mobile as it causes issues */ 
 @media (max-width: 768px) {
+
+  
   .glowing-border::before,
   .glowing-border::after {
     border: solid 3px transparent;
@@ -235,10 +243,7 @@ img {
     animation: rotate 10s linear infinite;
   }
 
-  .glowing-border::before,
-  .glowing-border::after {
-    display: none;
-  }
+
 }
 
 /*** Carousel 3D Styles ***/

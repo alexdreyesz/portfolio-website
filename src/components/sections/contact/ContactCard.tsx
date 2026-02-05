@@ -12,7 +12,7 @@ export default function ContactCard({icon, title, detail}: ContactCardProps) {
 
     return(
         <div 
-            className="h-20 w-full p-5 flex rounded-2xl backdrop-blur-md bg-white/0 glowing-border interactive-animation"
+            className={`h-20 w-full p-5 flex rounded-2xl backdrop-blur-md bg-white/0 interactive-animation ${inView ? "glowing-border" : "glow-disabled"}`}
             ref={ref}
             style={{
                 animationPlayState: inView ? "running" : "paused"
