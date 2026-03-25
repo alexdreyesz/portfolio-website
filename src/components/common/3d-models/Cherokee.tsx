@@ -15,27 +15,26 @@ dracoLoader.setDecoderPath('/draco/');
 import { useInView } from "../../../hooks/useInView";
 
 interface ModelProps {
-  active: boolean;
+    active: boolean;
+    timeRef: { current: number };
 }
 
-function Model({ active }: ModelProps) {
+function Model({ active, timeRef }: ModelProps) {
     useGLTF.preload('/models/extra/cherokee-compressed.glb');
     const { scene } = useGLTF('/models/extra/cherokee-compressed.glb');
-    
+
     const ref = useRef<THREE.Object3D>(null!);
 
-    const time = useRef(0);
-        
     const initialRotation = useRef<THREE.Euler>(new THREE.Euler(-1.2, -0.1, -0.4));
 
     useFrame((_, delta) => {
         if (!active) return;
 
-        time.current += delta;
+        timeRef.current += delta;
 
         if (ref.current) {
-            ref.current.rotation.x = initialRotation.current.x + Math.sin(time.current) * 0.06;
-            ref.current.rotation.y = initialRotation.current.y + Math.sin(time.current * 0.8) * 0.10;
+            ref.current.rotation.x = initialRotation.current.x + Math.sin(timeRef.current) * 0.06;
+            ref.current.rotation.y = initialRotation.current.y + Math.sin(timeRef.current * 0.8) * 0.10;
             ref.current.rotation.z = initialRotation.current.z;
         }
     });
@@ -55,6 +54,7 @@ function Model({ active }: ModelProps) {
 export default function SunnyBoat() {
 
     const { ref, inView } = useInView<HTMLDivElement>(0.05);
+    const timeRef = useRef(0);
 
     return (
         <figure className="h-[60%]" ref={ref}>
@@ -63,16 +63,16 @@ export default function SunnyBoat() {
                 <ambientLight intensity={1} color="#988ad4" />
                 <directionalLight position={[5, 5, 5]} intensity={5}/>
                 <directionalLight position={[-5, 5, -5]} intensity={5} />
-            
+
                 {/*
-                <OrbitControls 
-                    enablePan={false} 
-                    minDistance={5} 
+                <OrbitControls
+                    enablePan={false}
+                    minDistance={5}
                     maxDistance={2000}
                 />
                 */}
 
-                <Model  active={inView}/>
+                <Model active={inView} timeRef={timeRef} />
 
             </Canvas>
         )}

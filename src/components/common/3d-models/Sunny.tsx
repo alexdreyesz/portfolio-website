@@ -16,25 +16,24 @@ dracoLoader.setDecoderPath('/draco/');
 import { useInView } from "../../../hooks/useInView";
 
 interface ModelProps {
-  active: boolean;
+    active: boolean;
+    timeRef: { current: number };
 }
 
-function Model({ active }: ModelProps) {
+function Model({ active, timeRef }: ModelProps) {
     useGLTF.preload('/models/sunny-boat-compressed.glb');
     const { scene } = useGLTF('/models/sunny-boat-compressed.glb');
-    
-    const ref = useRef<THREE.Object3D>(null!);
 
-    const time = useRef(0);
+    const ref = useRef<THREE.Object3D>(null!);
 
     useFrame((_, delta) => {
         if (!active) return;
 
-        time.current += delta;
+        timeRef.current += delta;
 
         if (ref.current) {
-        ref.current.rotation.x = Math.sin(time.current) * 0.06;
-        ref.current.rotation.y = Math.sin(time.current * 0.8) * 0.10;
+            ref.current.rotation.x = Math.sin(timeRef.current) * 0.06;
+            ref.current.rotation.y = Math.sin(timeRef.current * 0.8) * 0.10;
         }
     });
 
@@ -51,6 +50,7 @@ function Model({ active }: ModelProps) {
 export default function SunnyBoat() {
 
     const { ref, inView } = useInView<HTMLDivElement>(0.1);
+    const timeRef = useRef(0);
 
     return (
         <figure className="h-[60%] w-100" ref={ref}>
@@ -69,7 +69,7 @@ export default function SunnyBoat() {
                 />
                 */}
 
-                <Model active={inView} />
+                <Model active={inView} timeRef={timeRef} />
 
             </Canvas>
         }

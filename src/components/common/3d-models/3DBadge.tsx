@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber'
@@ -21,59 +21,60 @@ interface BadgeIconsProps {
     animationXYZ: { x: number, y:number, z: number};
 }
 
-export default function BadgeIcon({badge3DURL, positionXYZ, rotationXYZ, animationXYZ}: BadgeIconsProps) {
+interface ModelProps extends BadgeIconsProps {
+    active: boolean;
+}
 
-    const { ref, inView } = useInView<HTMLDivElement>(0.1);
-
-    interface ModelProps extends BadgeIconsProps {
-        active: boolean;
-    }
-
-
-    function Model({
+function Model({
     badge3DURL,
     positionXYZ,
     rotationXYZ,
     animationXYZ,
     active
-    }: ModelProps) {
+}: ModelProps) {
 
-        useGLTF.preload(badge3DURL);
-        const badge = useGLTF(badge3DURL);
-        const ref = useRef<THREE.Object3D>(null!);
+    useGLTF.preload(badge3DURL);
+    const badge = useGLTF(badge3DURL);
+    const ref = useRef<THREE.Object3D>(null!);
 
-        useFrame(() => {
-            if (!active) return;
+    useEffect(() => {
+        if (ref.current) {
+            ref.current.rotation.x = rotationXYZ.x || 0;
+            ref.current.rotation.y = rotationXYZ.y || 0;
+            ref.current.rotation.z = rotationXYZ.z || 0;
+        }
+    }, []);
 
-            if (ref.current) {
-                ref.current.rotation.x += animationXYZ.x;
-                ref.current.rotation.y += animationXYZ.y;
-                ref.current.rotation.z += animationXYZ.z;
-            }
-        });
+    useFrame(() => {
+        if (!active) return;
 
-        return (
-            <primitive
-                ref={ref}
-                object={badge.scene}
-                position={[
-                    positionXYZ.x || 0,
-                    positionXYZ.y || 0,
-                    positionXYZ.z || 0
-                ]}
-                rotation={[
-                    rotationXYZ.x || 0,
-                    rotationXYZ.y || 0,
-                    rotationXYZ.z || 0
-                ]}
-            />
-        );
-    }
+        if (ref.current) {
+            ref.current.rotation.x += animationXYZ.x;
+            ref.current.rotation.y += animationXYZ.y;
+            ref.current.rotation.z += animationXYZ.z;
+        }
+    });
+
+    return (
+        <primitive
+            ref={ref}
+            object={badge.scene}
+            position={[
+                positionXYZ.x || 0,
+                positionXYZ.y || 0,
+                positionXYZ.z || 0
+            ]}
+        />
+    );
+}
+
+export default function BadgeIcon({badge3DURL, positionXYZ, rotationXYZ, animationXYZ}: BadgeIconsProps) {
+
+    const { ref, inView } = useInView<HTMLDivElement>(0.1);
 
     return (
         <figure className="h-[100%]" ref={ref}>
 
-        {inView &&(
             <Canvas camera={{position: [0, 0, 5], fov: 45}}>
                 <ambientLight intensity={1} color="#988ad4" />
                 <directionalLight position={[5, 5, 5]} intensity={5}/>
@@ -92,7 +93,7 @@ export default function BadgeIcon({badge3DURL, positionXYZ, rotationXYZ, animati
                 <Model badge3DURL={badge3DURL} positionXYZ={positionXYZ} rotationXYZ={rotationXYZ} animationXYZ={animationXYZ} active={inView} />
 
             </Canvas>
-        )}
+  
         </figure>
     );
 }

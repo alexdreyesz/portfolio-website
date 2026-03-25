@@ -15,27 +15,26 @@ dracoLoader.setDecoderPath('/draco/');
 import { useInView } from "../../../hooks/useInView";
 
 interface ModelProps {
-  active: boolean;
+    active: boolean;
+    timeRef: { current: number };
 }
 
-function Model({ active }: ModelProps) {
+function Model({ active, timeRef }: ModelProps) {
     useGLTF.preload('/models/extra/earth-compressed.glb');
     const { scene } = useGLTF('/models/extra/earth-compressed.glb');
-    
+
     const ref = useRef<THREE.Object3D>(null!);
 
-    const time = useRef(0);
-
     const initialRotation = useRef<THREE.Euler>(new THREE.Euler(0.4, -0.9, 0));
-    
+
     useFrame((_, delta) => {
         if (!active) return;
 
-        time.current += delta;
+        timeRef.current += delta;
 
         if (ref.current) {
             ref.current.rotation.x = initialRotation.current.x;
-            ref.current.rotation.y = initialRotation.current.y + time.current * 0.05;
+            ref.current.rotation.y = initialRotation.current.y + timeRef.current * 0.05;
             ref.current.rotation.z = initialRotation.current.z;
         }
     });
@@ -53,6 +52,7 @@ function Model({ active }: ModelProps) {
 export default function Earth() {
 
     const { ref, inView } = useInView<HTMLDivElement>(0.05);
+    const timeRef = useRef(0);
 
     return (
         <figure className="h-[60%]" ref={ref}>
@@ -62,16 +62,16 @@ export default function Earth() {
                 <ambientLight intensity={1} color="#988ad4" />
                 <directionalLight position={[5, 5, 5]} intensity={5}/>
                 <directionalLight position={[-5, 5, -5]} intensity={5} />
-            
+
                 {/*
-                <OrbitControls 
-                    enablePan={false} 
-                    minDistance={5} 
+                <OrbitControls
+                    enablePan={false}
+                    minDistance={5}
                     maxDistance={2000}
                 />
-            */}
+                */}
 
-                <Model active={inView} />
+                <Model active={inView} timeRef={timeRef} />
 
             </Canvas>
         )}
