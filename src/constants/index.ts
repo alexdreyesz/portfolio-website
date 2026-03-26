@@ -3,7 +3,7 @@ const badgeIcons = import.meta.glob('../assets/icons/badges/**/*.@(svg|png)', { 
 const logoIcons = import.meta.glob('../assets/icons/logo/*.@(png|svg)', { eager: true, import: 'default' });
 const projectThumbnails = import.meta.glob('../assets/thumbnails/**/*.@(png|jpeg)', { eager: true, import: 'default' });
 
-const songPath = import.meta.glob('../assets/music/**/*.mp3', { eager: true, import: 'default' });
+const songPath = import.meta.glob('../assets/music/**/*.mp3', { import: 'default' });
 const songImage = import.meta.glob('../assets/music/**/*.jpg', { eager: true, import: 'default' });
 
 
@@ -329,8 +329,8 @@ export const projects = {
 
 /* Constants For Music Section */
 export const songs = [
-    { game: "Moonlighter", name: "Tired Rynoka", imgUrl: songImage['../assets/music/moonlighter/moonlighter-soundtrack.jpg'] as string, songUrl: songPath['../assets/music/moonlighter/Moonlighter-Tired-Rynoka.mp3'] as string},
-    { game: "Sea Of Stars", name: "The Great Archives", imgUrl: songImage['../assets/music/sea-of-stars/sea-of-stars-soundtrack.jpg'] as string, songUrl: songPath['../assets/music/sea-of-stars/the-great-archives.mp3'] as string},
-    { game: "Hollow Knight", name: "Reflection", imgUrl: songImage['../assets/music/hollow-knight/hollow-knight-soundtrack.jpg'] as string, songUrl: songPath['../assets/music/hollow-knight/reflection.mp3'] as string},
-    { game: "Chuy Montana", name: "Perdoname Mama", imgUrl: songImage['../assets/music/pirata/pirata-soundtrack.jpg'] as string, songUrl: songPath['../assets/music/pirata/perdon-mama.mp3'] as string},
+    { game: "Moonlighter", name: "Tired Rynoka", imgUrl: songImage['../assets/music/moonlighter/moonlighter-soundtrack.jpg'] as string, loadUrl: songPath['../assets/music/moonlighter/Moonlighter-Tired-Rynoka.mp3'] as () => Promise<string> },
+    { game: "Sea Of Stars", name: "The Great Archives", imgUrl: songImage['../assets/music/sea-of-stars/sea-of-stars-soundtrack.jpg'] as string, loadUrl: songPath['../assets/music/sea-of-stars/the-great-archives.mp3'] as () => Promise<string> },
+    { game: "Hollow Knight", name: "Reflection", imgUrl: songImage['../assets/music/hollow-knight/hollow-knight-soundtrack.jpg'] as string, loadUrl: songPath['../assets/music/hollow-knight/reflection.mp3'] as () => Promise<string> },
+    { game: "Chuy Montana", name: "Perdoname Mama", imgUrl: songImage['../assets/music/pirata/pirata-soundtrack.jpg'] as string, loadUrl: songPath['../assets/music/pirata/perdon-mama.mp3'] as () => Promise<string> },
 ];

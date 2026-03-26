@@ -30,3 +30,9 @@
         background-size: 300vw 300vh;
     }
 }
+
+@media (max-width: 768px) {
+    .animate-sphere-rotate {
+        animation: none;
+    }
+}

@@ -11,25 +11,29 @@ export default function PlayMusic() {
     const [toggleIcon, setToggleIcon] = useState(pauseIcon);
     const audioRef = useRef<HTMLAudioElement>(null);
     const [index, setIndex] = useState<number>(0);
-    const [volume, setVolume] = useState(0.5); 
+    const [volume, setVolume] = useState(0.5);
+    const [audioSrc, setAudioSrc] = useState('');
+    const resolvedUrls = useRef<Record<number, string>>({});
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-    
+
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const isMobile = () => window.innerWidth <= 768; // sm: 640 md: 768
 
+    async function ensureLoaded(songIndex: number): Promise<string> {
+        if (!resolvedUrls.current[songIndex]) {
+            resolvedUrls.current[songIndex] = await songs[songIndex].loadUrl();
+        }
+        return resolvedUrls.current[songIndex];
+    }
+
     function togglePlay() {
-        if(isPlaying == false) {
+        if (!isPlaying) {
             setIsPlaying(true);
             setToggleIcon(playIcon);
-            if (audioRef.current) {
-                audioRef.current.play();
-            }
         } else {
             setIsPlaying(false);
             setToggleIcon(pauseIcon);
-            if (audioRef.current) {
-                audioRef.current.pause();
-            }
+            audioRef.current?.pause();
         }
     }
 
@@ -38,36 +42,15 @@ export default function PlayMusic() {
     }
 
     function playNextSong() {
-        let current = 0;
-
-        if(index < (songs.length - 1)) {
-            current = index + 1;
-        } else {
-            current = 0;
-        }
-
-        setIndex(current);
-
+        const next = index < songs.length - 1 ? index + 1 : 0;
+        setIndex(next);
         setIsPlaying(true);
         setToggleIcon(playIcon);
-
-        if(audioRef.current) {
-            audioRef.current.pause();
-            audioRef.current.play();
-        }
     }
 
     function playPreviousSong() {
-        let current = 0;
-
-        if(index > 0) {
-            current = index - 1;
-        } else {
-            current = (songs.length - 1);
-        }
-
-        setIndex(current);
-
+        const prev = index > 0 ? index - 1 : songs.length - 1;
+        setIndex(prev);
         setIsPlaying(true);
         setToggleIcon(playIcon);
     }
@@ -75,28 +58,38 @@ export default function PlayMusic() {
     const volumeRef = useRef(volume);
 
     useEffect(() => {
-    volumeRef.current = volume;
+        volumeRef.current = volume;
     }, [volume]);
 
+    // Load URL on demand and trigger playback
     useEffect(() => {
-        if (audioRef.current) {
-            audioRef.current.pause();
-            
-            audioRef.current.volume = volumeRef.current;
-    
-            if (isPlaying) {
-                audioRef.current.play().catch((err) => {
-                    if (err.name !== "NotAllowedError") {
-                        console.error("Unexpected audio play error:", err);
-                    }
-                });
-            }
+        if (!isPlaying) {
+            audioRef.current?.pause();
+            return;
         }
+
+        let cancelled = false;
+        ensureLoaded(index).then(url => {
+            if (cancelled) return;
+            setAudioSrc(url);
+        });
+        return () => { cancelled = true; };
     }, [index, isPlaying]);
+
+    // Play once src is ready
+    useEffect(() => {
+        if (!audioSrc || !isPlaying || !audioRef.current) return;
+        audioRef.current.volume = volumeRef.current;
+        audioRef.current.play().catch((err) => {
+            if (err.name !== "NotAllowedError") {
+                console.error("Unexpected audio play error:", err);
+            }
+        });
+    }, [audioSrc, isPlaying]);
 
     useEffect(() => {
         if (audioRef.current) {
-          audioRef.current.volume = volume;
+            audioRef.current.volume = volume;
         }
     }, [volume]);
 
@@ -141,7 +134,7 @@ export default function PlayMusic() {
                 if (isMobile()) setIsPopupVisible((prev) => !prev);
             }}
         >
-            <audio key={index} ref={audioRef} src={songs[index].songUrl} loop={true}/>
+            <audio key={index} ref={audioRef} src={audioSrc} loop={true}/>
             <button className="button flex justify-center items-center align-middle gap-2" onClick={() => { if (!isMobile()) togglePlay(); }}><img className="h-4" src={toggleIcon}/>Play</button>
 
            {isPopupVisible && (

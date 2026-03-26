@@ -1,4 +1,4 @@
-import GalaxyBackground from '../../../../public/images/galaxy-background.png';
+import GalaxyBackground from '../../../../public/images/galaxy-background-compressed.jpg';
 import './2Dbackground.css';
 
 export default function Background2D() {

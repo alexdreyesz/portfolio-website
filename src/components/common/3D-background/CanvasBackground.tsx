@@ -9,7 +9,7 @@ export default function CanvasBackground() {
     const degToRad = (deg: number) => deg * (Math.PI / 180);
   
     useEffect(() => {
-      camera.rotation.set(degToRad(180), degToRad(0), 0);
+      camera.rotation.set(degToRad(170), degToRad(0), 0);
     }, [camera]);
   
     return null;
@@ -17,6 +17,8 @@ export default function CanvasBackground() {
   
   return (
     <Canvas
+      dpr={[1, 1.5]}
+      performance={{ min: 0.5 }}
       style={{
         position: "fixed",
         top: 0,
@@ -25,7 +27,7 @@ export default function CanvasBackground() {
         width: "100vw",
         height: "100vh",
       }}
-      camera={{ position: [0, 0, 0], fov: 75 }}
+      camera={{ position: [0, 0, 0], fov: 110 }}
     >
       <ambientLight intensity={1} />
       <CameraRotationInitializer />

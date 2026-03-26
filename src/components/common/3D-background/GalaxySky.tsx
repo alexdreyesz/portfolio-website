@@ -14,13 +14,18 @@ dracoLoader.setDecoderPath('/draco/');
 export default function BackgroundSphere() {
   useGLTF.preload('/models/backgrounds/galaxy-sphere.glb');
   const { scene } = useGLTF("/models/backgrounds/galaxy-sphere.glb");
-  const ref = useRef<THREE.Object3D>(null!);;
+  const ref = useRef<THREE.Object3D>(null!);
+  const elapsed = useRef(0);
 
-  useFrame(() => {
+  useFrame((_, delta) => {
+    elapsed.current += delta;
+    if (elapsed.current < 1 / 30) return; // cap at 30fps
+
     if (ref.current) {
-      ref.current.rotation.x += 0.0002;
-      ref.current.rotation.y += 0.0003; 
+      ref.current.rotation.x += 0.0002 * elapsed.current * 60;
+      ref.current.rotation.y += 0.0003 * elapsed.current * 60;
     }
+    elapsed.current = 0;
   });
 
   return (
