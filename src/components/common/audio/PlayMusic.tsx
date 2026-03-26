@@ -134,7 +134,7 @@ export default function PlayMusic() {
                 if (isMobile()) setIsPopupVisible((prev) => !prev);
             }}
         >
-            <audio key={index} ref={audioRef} src={audioSrc} loop={true}/>
+            <audio key={index} ref={audioRef} src={audioSrc || undefined} loop={true}/>
             <button className="button flex justify-center items-center align-middle gap-2" onClick={() => { if (!isMobile()) togglePlay(); }}><img className="h-4" src={toggleIcon}/>Play</button>
 
            {isPopupVisible && (
