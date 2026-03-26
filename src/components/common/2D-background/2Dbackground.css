@@ -1,0 +1,32 @@
+.background2D {
+    position: absolute;
+    top: -60vh;
+    left: -60vw;
+    width: 220vw;
+    height: 220vh;
+    background-size: 180vw 180vh;
+    background-repeat: repeat;
+    will-change: transform;
+}
+
+@keyframes float-space {
+    0%   { transform: translate(0,     0)     rotate(0deg)    scale(1);    }
+    12%  { transform: translate(30vw, -20vh)  rotate(0.8deg)  scale(1.02); }
+    25%  { transform: translate(45vw,  10vh)  rotate(1.5deg)  scale(1.04); }
+    38%  { transform: translate(20vw,  40vh)  rotate(1deg)    scale(1.05); }
+    50%  { transform: translate(-15vw, 35vh)  rotate(0deg)    scale(1.04); }
+    62%  { transform: translate(-40vw, 10vh)  rotate(-1deg)   scale(1.02); }
+    75%  { transform: translate(-35vw,-25vh)  rotate(-1.5deg) scale(1);    }
+    88%  { transform: translate(-10vw,-40vh)  rotate(-0.8deg) scale(1.01); }
+    100% { transform: translate(0,     0)     rotate(0deg)    scale(1);    }
+}
+
+.animate-sphere-rotate {
+    animation: float-space 240s linear infinite;
+}
+
+@media (max-width: 1601px) {
+    .background2D {
+        background-size: 300vw 300vh;
+    }
+}

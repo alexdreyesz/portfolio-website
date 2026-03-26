@@ -1,7 +1,7 @@
 import { cards } from "../../../constants/index"
 import CareerCard from "./CareerCard"
 
-import Badge3D from "../../common/3d-models/3DBadge"
+import Badge3D from "../../common/3D-models/3DBadge"
 
 import GSAPScrollBehaviorCareer from "../../../utils/gsapScrollBehaviorCareer"
 

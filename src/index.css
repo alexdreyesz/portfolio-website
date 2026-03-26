@@ -5,6 +5,7 @@
 @tailwind utilities;
 
 @layer utilities {
+  
     .animate-spin-custom{
         animation: spin 10s linear infinite;
     }

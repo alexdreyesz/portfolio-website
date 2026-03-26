@@ -6,13 +6,14 @@ import Career from './components/sections/career/Career'
 import Projects from './components/sections/projects/Projects'
 import Contact from './components/sections/contact/Contact'
 import Footer from './components/Footer'
-import CanvasBackground from "./components/common/background/CanvasBackground";
+import CanvasBackground from "./components/common/3D-background/CanvasBackground";
+import Background2D from "./components/common/2D-background/Background2D";
 
 
 function App() {
   return (
     <div>
-      <CanvasBackground/>
+      <Background2D/>
       <Header/>
       <main className="overflow-hidden">
         <Home/>

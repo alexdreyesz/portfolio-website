@@ -1,7 +1,7 @@
 import Title from "./HomeTitle"
-import Sunny from "../../common/3d-models/Sunny"
-import Cherokee from "../../common/3d-models/Cherokee"
-import Earth from "../../common/3d-models/Earth"
+import Sunny from "../../common/3D-models/Sunny"
+import Cherokee from "../../common/3D-models/Cherokee"
+import Earth from "../../common/3D-models/Earth"
 
 function Home() {
     return (
