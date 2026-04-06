@@ -10,44 +10,65 @@ const songImage = import.meta.glob('../assets/music/**/*.jpg', { eager: true, im
 
 /* Constants For About Home Section */
 export const words= [
-    { text: "React", imgPath: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string },
-    { text: "Tailwind", imgPath: badgeIcons['../assets/icons/badges/frameworks/tailwindcss.svg'] as string },
-    { text: "Threejs", imgPath: badgeIcons['../assets/icons/badges/frameworks/threejs.png'] as string },
-    { text: "GSAP", imgPath: badgeIcons['../assets/icons/badges/frameworks/gsap1.png'] as string },
+    { text: "React", imgPath: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string },
+    { text: "Tailwind", imgPath: badgeIcons['../assets/icons/badges/frontend/tailwindcss.svg'] as string },
+    { text: "Threejs", imgPath: badgeIcons['../assets/icons/badges/libraries/threejs.png'] as string },
+    { text: "GSAP", imgPath: badgeIcons['../assets/icons/badges/libraries/gsap1.png'] as string },
 ];
 
 /* Constants For About Section */
 export const languages = [
     { text: "C", iconPath: badgeIcons['../assets/icons/badges/languages/c.svg'] as string },
     { text: "C++", iconPath: badgeIcons['../assets/icons/badges/languages/cplusplus.svg'] as string },
-    { text: "C#", iconPath: badgeIcons['../assets/icons/badges/languages/csharp.svg'] as string },
-    { text: "CSS", iconPath: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string },
-    { text: "HTML", iconPath: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string },
     { text: "JavaScript", iconPath: badgeIcons['../assets/icons/badges/languages/javascript.svg'] as string },
     { text: "TypeScript", iconPath: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string },
     { text: "Java", iconPath: badgeIcons['../assets/icons/badges/languages/java.svg'] as string },
-    { text: "JSON", iconPath: badgeIcons['../assets/icons/badges/languages/json.svg'] as string },
     { text: "Python", iconPath: badgeIcons['../assets/icons/badges/languages/python.svg'] as string },
     { text: "PHP", iconPath: badgeIcons['../assets/icons/badges/languages/php.svg'] as string },
-    { text: "MySQL", iconPath: badgeIcons['../assets/icons/badges/languages/mysql.svg'] as string },
+    // { text: "C#", iconPath: badgeIcons['../assets/icons/badges/languages/csharp.svg'] as string },
     // { text: "Go", iconPath: badgeIcons['../assets/icons/badges/languages/go.svg'] as string },
     // { text: "Kotlin", iconPath: badgeIcons['../assets/icons/badges/languages/kotlin.svg'] as string },
     // { text: "Rust", iconPath: badgeIcons['../assets/icons/badges/languages/rust.svg'] as string },
     // { text: "Swift", iconPath: badgeIcons['../assets/icons/badges/languages/swift.svg'] as string },
 ];
 
+export const frontend = [
+    { text: "React", iconPath: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string },
+    { text: "Angular", iconPath: badgeIcons['../assets/icons/badges/frontend/angular.svg'] as string },
+    { text: "TailwindCSS", iconPath: badgeIcons['../assets/icons/badges/frontend/tailwindcss.svg'] as string },
+    { text: "CSS", iconPath: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string },
+    { text: "HTML", iconPath: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string },
+    // { text: "Vue", iconPath: badgeIcons['../assets/icons/badges/frontend/vuejs.svg'] as string },
+];
+
+export const backend = [
+    { text: "Express", iconPath: badgeIcons['../assets/icons/badges/backend/express.svg'] as string },
+    { text: "FastApi", iconPath: badgeIcons['../assets/icons/badges/backend/fastapi.svg'] as string },
+    { text: "Nodejs", iconPath: badgeIcons['../assets/icons/badges/backend/nodejs.svg'] as string },
+    { text: "Nodemon", iconPath: badgeIcons['../assets/icons/badges/development-tools/nodemon.svg'] as string },
+    { text: "Apache", iconPath: badgeIcons['../assets/icons/badges/backend/apache.svg'] as string },
+    { text: "JSON", iconPath: badgeIcons['../assets/icons/badges/backend/json.svg'] as string },
+    // { text: "Flask", iconPath: badgeIcons['../assets/icons/badges/backend/flask.svg'] as string },
+];
+
+export const databases = [
+    { text: "mongoDB", iconPath: badgeIcons['../assets/icons/badges/databases/mongodb.svg'] as string },
+    { text: "MariaDB", iconPath: badgeIcons['../assets/icons/badges/databases/mariadb.svg'] as string },
+    { text: "MySQL", iconPath: badgeIcons['../assets/icons/badges/databases/mysql.svg'] as string },
+    { text: "Azure SQL", iconPath: badgeIcons['../assets/icons/badges/databases/azuresqldatabase.svg'] as string },
+    // { text: "CosmosDB", iconPath: badgeIcons['../assets/icons/badges/databases/cosmosdb.svg'] as string },
+    // { text: "Postgresql", iconPath: badgeIcons['../assets/icons/badges/databases/postgresql.svg'] as string },
+];
+
+export const protocols = [
+    { text: "REST", iconPath: badgeIcons['../assets/icons/badges/protocols/rest.svg'] as string },
+    { text: "GraphQL", iconPath: badgeIcons['../assets/icons/badges/protocols/graphql.svg'] as string },
+];
+
 export const frameworks = [
-    { text: "React", iconPath: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string },
-    { text: "Angular", iconPath: badgeIcons['../assets/icons/badges/frameworks/angular.svg'] as string },
-    { text: "TailwindCSS", iconPath: badgeIcons['../assets/icons/badges/frameworks/tailwindcss.svg'] as string },
-    { text: "ThreeJS", iconPath: badgeIcons['../assets/icons/badges/frameworks/threejs.svg'] as string },
-    { text: "GSAP", iconPath: badgeIcons['../assets/icons/badges/frameworks/gsap1.png'] as string },
-    { text: "Express", iconPath: badgeIcons['../assets/icons/badges/frameworks/express.svg'] as string },
-    // { text: "Flask", iconPath: badgeIcons['../assets/icons/badges/frameworks/flask.svg'] as string },
-    // { text: "OpenGL", iconPath: badgeIcons['../assets/icons/badges/frameworks/opengl.svg'] as string },
-    // { text: "Vue", iconPath: badgeIcons['../assets/icons/badges/frameworks/vuejs.svg'] as string },
     // { text: "Electron", iconPath: badgeIcons['../assets/icons/badges/frameworks/electron.svg'] as string },
-    { text: "FastApi", iconPath: badgeIcons['../assets/icons/badges/frameworks/fastapi.svg'] as string },
+    // { text: "Flutter", iconPath: badgeIcons['../assets/icons/badges/frameworks/flutter.svg'] as string },
+    // { text: "OpenGL", iconPath: badgeIcons['../assets/icons/badges/libraries/opengl.svg'] as string },
 ];
 
 export const libraries = [
@@ -55,43 +76,45 @@ export const libraries = [
     { text: "React Bootstrap", iconPath: badgeIcons['../assets/icons/badges/libraries/reactbootstrap.svg'] as string },
     { text: "React Navigation", iconPath: badgeIcons['../assets/icons/badges/libraries/reactnavigation.svg'] as string },
     { text: "React Router", iconPath: badgeIcons['../assets/icons/badges/libraries/reactrouter.svg'] as string },
-    // { text: "Framermotion", iconPath: badgeIcons['../assets/icons/badges/libraries/framermotion.svg'] as string },
-    // { text: "Framework7", iconPath: badgeIcons['../assets/icons/badges/libraries/framework7.svg'] as string },
-    // { text: "JQuery", iconPath: badgeIcons['../assets/icons/badges/libraries/jquery.svg'] as string },
     { text: "Anaconda", iconPath: badgeIcons['../assets/icons/badges/libraries/anaconda.svg'] as string },
     { text: "Matlab", iconPath: badgeIcons['../assets/icons/badges/libraries/matlab.svg'] as string },
     { text: "Matplotlib", iconPath: badgeIcons['../assets/icons/badges/libraries/matplotlib.svg'] as string },
     { text: "Pandas", iconPath: badgeIcons['../assets/icons/badges/libraries/pandas.svg'] as string },
     { text: "Numpy", iconPath: badgeIcons['../assets/icons/badges/libraries/numpy.svg'] as string },
     { text: "Pytorch", iconPath: badgeIcons['../assets/icons/badges/libraries/pytorch.svg'] as string },
-    // { text: "Poetry", iconPath: badgeIcons['../assets/icons/badges/libraries/poetry.svg'] as string },
     { text: "NPM", iconPath: badgeIcons['../assets/icons/badges/libraries/npm.svg'] as string },
+    { text: "ThreeJS", iconPath: badgeIcons['../assets/icons/badges/libraries/threejs.svg'] as string },
+    { text: "GSAP", iconPath: badgeIcons['../assets/icons/badges/libraries/gsap1.png'] as string },
+    // { text: "Poetry", iconPath: badgeIcons['../assets/icons/badges/libraries/poetry.svg'] as string },
+    // { text: "Framermotion", iconPath: badgeIcons['../assets/icons/badges/libraries/framermotion.svg'] as string },
+    // { text: "Framework7", iconPath: badgeIcons['../assets/icons/badges/libraries/framework7.svg'] as string },
+    // { text: "JQuery", iconPath: badgeIcons['../assets/icons/badges/libraries/jquery.svg'] as string },
+];
+
+export const developmentEnvironments = [
+    { text: "Vitejs", iconPath: badgeIcons['../assets/icons/badges/development-environments/vitejs.svg'] as string },
+    { text: "ExpoGo", iconPath: badgeIcons['../assets/icons/badges/development-environments/expo-go.svg'] as string },
+    // { text: "Vite", iconPath: badgeIcons['../assets/icons/badges/development-environments/vite.svg'] as string },
 ];
 
 export const developmentTools = [
     { text: "VScode", iconPath: badgeIcons['../assets/icons/badges/development-tools/vscode.svg'] as string },
+    { text: "Visual Studio", iconPath: badgeIcons['../assets/icons/badges/development-tools/visualstudio.svg'] as string },
     { text: "Eclipse", iconPath: badgeIcons['../assets/icons/badges/development-tools/eclipse.svg'] as string },
-    // { text: "Flutter", iconPath: badgeIcons['../assets/icons/badges/development-tools/flutter.svg'] as string },
     { text: "Git", iconPath: badgeIcons['../assets/icons/badges/development-tools/git.svg'] as string },
     { text: "Github", iconPath: badgeIcons['../assets/icons/badges/development-tools/github.svg'] as string },
     { text: "Jypyter", iconPath: badgeIcons['../assets/icons/badges/development-tools/jupyter.svg'] as string },
-    // { text: "Kubernetes", iconPath: badgeIcons['../assets/icons/badges/development-tools/kubernetes.svg'] as string },
     { text: "Linux", iconPath: badgeIcons['../assets/icons/badges/development-tools/linux.svg'] as string },
-    // { text: "Maven", iconPath: badgeIcons['../assets/icons/badges/development-tools/maven.svg'] as string },
-    { text: "Nodejs", iconPath: badgeIcons['../assets/icons/badges/development-tools/nodejs.svg'] as string },
-    { text: "Nodemon", iconPath: badgeIcons['../assets/icons/badges/development-tools/nodemon.svg'] as string },
     { text: "Postman", iconPath: badgeIcons['../assets/icons/badges/development-tools/postman.svg'] as string },
-    // { text: "Powershell", iconPath: badgeIcons['../assets/icons/badges/development-tools/powershell.svg'] as string },
     { text: "Ubuntu", iconPath: badgeIcons['../assets/icons/badges/development-tools/ubuntu.svg'] as string },
-    { text: "Unity", iconPath: badgeIcons['../assets/icons/badges/development-tools/unity.svg'] as string },
-    { text: "Unreal Engine", iconPath: badgeIcons['../assets/icons/badges/development-tools/unrealengine.svg'] as string },
-    // { text: "Visual Studio", iconPath: badgeIcons['../assets/icons/badges/development-tools/visualstudio.svg'] as string },
-    // { text: "Vite", iconPath: badgeIcons['../assets/icons/badges/development-tools/vite.svg'] as string },
-    { text: "Vitejs", iconPath: badgeIcons['../assets/icons/badges/development-tools/vitejs.svg'] as string },
     { text: "Vultr", iconPath: badgeIcons['../assets/icons/badges/development-tools/vultr.svg'] as string },
+    { text: "Azure", iconPath: badgeIcons['../assets/icons/badges/development-tools/azure.svg'] as string },
     { text: "Twilio", iconPath: badgeIcons['../assets/icons/badges/development-tools/twilio.svg'] as string },
     { text: "Resend", iconPath: badgeIcons['../assets/icons/badges/development-tools/resend.svg'] as string },
     { text: "Supabase", iconPath: badgeIcons['../assets/icons/badges/development-tools/supabase.svg'] as string }
+    // { text: "Kubernetes", iconPath: badgeIcons['../assets/icons/badges/development-tools/kubernetes.svg'] as string },
+    // { text: "Maven", iconPath: badgeIcons['../assets/icons/badges/development-tools/maven.svg'] as string },
+    // { text: "Powershell", iconPath: badgeIcons['../assets/icons/badges/development-tools/powershell.svg'] as string },
 ];
 
 export const designTools = [
@@ -103,14 +126,9 @@ export const designTools = [
     // { text: "Wordpress", iconPath: badgeIcons['../assets/icons/badges/design-tools/wordpress.svg'] as string },
 ];
 
-export const databases = [
-    { text: "MariaDB", iconPath: badgeIcons['../assets/icons/badges/databases/mariadb.svg'] as string },
-    { text: "Apache", iconPath: badgeIcons['../assets/icons/badges/databases/apache.svg'] as string },
-    { text: "Azure", iconPath: badgeIcons['../assets/icons/badges/databases/azure.svg'] as string },
-    { text: "Azure SQL", iconPath: badgeIcons['../assets/icons/badges/databases/azuresqldatabase.svg'] as string },
-    // { text: "CosmosDB", iconPath: badgeIcons['../assets/icons/badges/databases/cosmosdb.svg'] as string },
-    { text: "mongoDB", iconPath: badgeIcons['../assets/icons/badges/databases/mongodb.svg'] as string },
-    // { text: "Postgresql", iconPath: badgeIcons['../assets/icons/badges/databases/postgresql.svg'] as string },
+export const gameDevelopment = [
+    { text: "Unity", iconPath: badgeIcons['../assets/icons/badges/game-development/unity.svg'] as string },
+    { text: "Unreal Engine", iconPath: badgeIcons['../assets/icons/badges/game-development/unrealengine.svg'] as string },
 ];
 
 export const AILLM = [
@@ -183,13 +201,13 @@ export const projects = {
         date: "Jan 2025 - Mar 2025",
         description: "ContactHub is a complete contact management system built with the LAMP stack (Linux, Apache, MySQL, PHP). It offers secure user authentication, easy-to-use CRUD operations, and powerful search and filtering features. With automated database backups and a fully responsive front-end, it ensures data integrity while delivering a smooth and efficient user experience.",
         technologies: [
-            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
-            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string},
             {text: "JavaScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/javascript.svg'] as string},
             {text: "MariaDB", badgeUrl: badgeIcons['../assets/icons/badges/databases/mariadb.svg'] as string},
             {text: "Linux", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/linux.svg'] as string},
-            {text: "Apache", badgeUrl: badgeIcons['../assets/icons/badges/databases/apache.svg'] as string},
-            {text: "MySQL", badgeUrl: badgeIcons['../assets/icons/badges/languages/mysql.svg'] as string},
+            {text: "Apache", badgeUrl: badgeIcons['../assets/icons/badges/backend/apache.svg'] as string},
+            {text: "MySQL", badgeUrl: badgeIcons['../assets/icons/badges/databases/mysql.svg'] as string},
             {text: "PHP", badgeUrl: badgeIcons['../assets/icons/badges/languages/php.svg'] as string},
         ]
     },
@@ -202,11 +220,11 @@ export const projects = {
         date: "Mar 2025 - Apr 2025",
         description: "A dynamic and responsive UCF themed GeoGuesser game built with HTML, CSS, TypeScript, React, and the Leaflet map API. Players are challenged to guess locations around the UCF campus using interactive maps and intuitive navigation. Designed with a focus on performance, smooth user interaction, and a clean, modern interface.",
         technologies: [
-            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
-            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string},
             {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
-            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
-            {text: "leaflet", badgeUrl: badgeIcons['../assets/icons/badges/apis/leaflet.png'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string},
+            {text: "leaflet", badgeUrl: badgeIcons['../assets/icons/badges/libraries/leaflet.png'] as string},
         ]
     },
 
@@ -218,13 +236,13 @@ export const projects = {
         date: "April 2025",
         description: "An interactive personal portfolio crafted with React, Tailwind CSS, Three.js, and GSAP. It highlights my projects, technical skills, and experience through responsive design, smooth animations, and 3D visuals to create an engaging and dynamic user experience. Built with modern design principles, and accessibility to ensure a seamless experience across all devices.",
         technologies: [
-            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
-            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string},
             {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
-            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
-            {text: "Tailwind", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/tailwindcss.svg'] as string},
-            {text: "ThreeJS", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/threejs.svg'] as string},
-            {text: "GSAP", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/gsap1.png'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string},
+            {text: "Tailwind", badgeUrl: badgeIcons['../assets/icons/badges/frontend/tailwindcss.svg'] as string},
+            {text: "ThreeJS", badgeUrl: badgeIcons['../assets/icons/badges/libraries/threejs.svg'] as string},
+            {text: "GSAP", badgeUrl: badgeIcons['../assets/icons/badges/libraries/gsap1.png'] as string},
         ]
     },
 
@@ -236,14 +254,14 @@ export const projects = {
         date: "Oct 2024 - Present",
         description: "Codelaboration is an interactive coding presentation platform built with MongoDB, Express, React, and Node.js. It allows presenters to showcase code live, line by line, with a real-time dynamic editor for live editing and display. Designed to create an engaging and collaborative coding experience for audiences and presenters alike. Still a work in progress.",
         technologies: [
-            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
-            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string},
             {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
-            {text: "Tailwind", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/tailwindcss.svg'] as string},
+            {text: "Tailwind", badgeUrl: badgeIcons['../assets/icons/badges/frontend/tailwindcss.svg'] as string},
             {text: "MongoDB", badgeUrl: badgeIcons['../assets/icons/badges/databases/mongodb.svg'] as string},
-            {text: "ExpressJs", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/express.svg'] as string},
-            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
-            {text: "NodeJs", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/nodejs.svg'] as string},
+            {text: "ExpressJs", badgeUrl: badgeIcons['../assets/icons/badges/backend/express.svg'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string},
+            {text: "NodeJs", badgeUrl: badgeIcons['../assets/icons/badges/backend/nodejs.svg'] as string},
         ]
     },
 
@@ -255,13 +273,13 @@ export const projects = {
         date: "Jan 2025 - Present",
         description: "Developing an AI-powered IT solution in collaboration with the U.S. Space Force, designed to adapt to user input and technical skill levels. Integrating technologies like OpenAI, Azure SQL Database, ServiceNow, and Archibus to deliver intelligent support, reduce IT ticket volume, and boost overall efficiency by empowering users to resolve common issues independently.",
         technologies: [
-            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
-            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string},
             {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
-            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string},
             {text: "AzureSQLDatabse", badgeUrl: badgeIcons['../assets/icons/badges/databases/azuresqldatabase.svg'] as string},
-            {text: "Azure", badgeUrl: badgeIcons['../assets/icons/badges/databases/azure.svg'] as string},
-            {text: "Flask", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/flask.svg'] as string},
+            {text: "Azure", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/azure.svg'] as string},
+            {text: "Flask", badgeUrl: badgeIcons['../assets/icons/badges/backend/flask.svg'] as string},
             {text: "Chatgpt", badgeUrl: badgeIcons['../assets/icons/badges/ai-llm/chatgpt.svg'] as string},
         ]
     }, 
@@ -274,10 +292,10 @@ export const projects = {
         date: "Jul 2025",
         description: "Our team built mAIn Line, a web and mobile app that functions as a personal emergency assistant powered by Google Gemini. The app uses Twilio and Gemini to simulate emergency calls, interpret user medical data, and relay critical information to responders in real time.",
         technologies: [
-            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
-            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string},
             {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
-            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string},
             {text: "mongoDB", badgeUrl: badgeIcons['../assets/icons/badges/databases/mongodb.svg'] as string },
             {text: "Twilio", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/twilio.svg'] as string },
             {text: "Resend", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/resend.svg'] as string },
@@ -293,14 +311,14 @@ export const projects = {
         date: "Nov 2025",
         description: "Developed Neighborly, a mutual-aid platform that makes helping neighbors simple. The backend matches offers with requests, while AI including Gemini highlights urgent local needs, creates community events, and guides residents to better understand and act on issues around them.",
         technologies: [
-            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
-            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string},
             {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
-            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string},
             {text: "mongoDB", badgeUrl: badgeIcons['../assets/icons/badges/databases/mongodb.svg'] as string},
             {text: "Supabase", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/supabase.svg'] as string},
             {text: "Python", badgeUrl: badgeIcons['../assets/icons/badges/languages/python.svg'] as string},
-            {text: "FastApi", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/fastapi.svg'] as string },
+            {text: "FastApi", badgeUrl: badgeIcons['../assets/icons/badges/backend/fastapi.svg'] as string },
             {text: "Gemini", badgeUrl: badgeIcons['../assets/icons/badges/ai-llm/google-gemini.svg'] as string },
         ]
     }, 
@@ -313,12 +331,12 @@ export const projects = {
         date: "Oct 2025",
         description: "Developing Simply Law, an AI-powered legal workflow platform that transforms emails, texts, call transcripts, and documents into actionable case insights using a multi-agent architecture with OCR, audio transcription, and intelligent intent routing. Integrated Twilio and Resend with deployment on Vultr to automate legal workflows and reduce administrative overhead.",
         technologies: [
-            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/languages/html5.svg'] as string},
-            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/languages/css3.svg'] as string},
+            {text: "HTML", badgeUrl: badgeIcons['../assets/icons/badges/frontend/html5.svg'] as string},
+            {text: "CSS", badgeUrl: badgeIcons['../assets/icons/badges/frontend/css3.svg'] as string},
             {text: "TypeScript", badgeUrl: badgeIcons['../assets/icons/badges/languages/typescript.svg'] as string},
-            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/react.svg'] as string},
+            {text: "React", badgeUrl: badgeIcons['../assets/icons/badges/frontend/react.svg'] as string},
             {text: "Python", badgeUrl: badgeIcons['../assets/icons/badges/languages/python.svg'] as string},
-            {text: "FastApi", badgeUrl: badgeIcons['../assets/icons/badges/frameworks/fastapi.svg'] as string},
+            {text: "FastApi", badgeUrl: badgeIcons['../assets/icons/badges/backend/fastapi.svg'] as string},
             {text: "Vultr", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/vultr.svg'] as string},
             {text: "Twilio", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/twilio.svg'] as string},
             {text: "Resend", badgeUrl: badgeIcons['../assets/icons/badges/development-tools/resend.svg'] as string},

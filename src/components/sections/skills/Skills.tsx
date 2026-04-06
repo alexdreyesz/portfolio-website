@@ -1,4 +1,4 @@
-import { languages, frameworks, libraries, developmentTools, designTools, databases, AILLM, professional } from "../../../constants/index"
+import { languages, frontend, backend, databases, protocols, libraries, developmentEnvironments, developmentTools, designTools, gameDevelopment,  AILLM, professional } from "../../../constants/index"
 
 import IconShowCaseSkills from "./IconShowCaseSkills";
 
@@ -22,15 +22,39 @@ export default function Skills() {
                 GSAPDirection="down"
             />
 
+            <IconShowCaseSkills
+                CategoryName="Frontend"
+                CategoryObject={frontend}
+                GSAPDirection="down"
+            />
+
+            <IconShowCaseSkills
+                CategoryName="Backend"
+                CategoryObject={backend}
+                GSAPDirection="down"
+            />
+
             <IconShowCaseSkills 
-                CategoryName="Frameworks"
-                CategoryObject={frameworks}
+                CategoryName="Databases"
+                CategoryObject={databases}
+                GSAPDirection="down"
+            />
+
+            <IconShowCaseSkills
+                CategoryName="Protocols"
+                CategoryObject={protocols}
                 GSAPDirection="down"
             />
 
             <IconShowCaseSkills 
                 CategoryName="Libraries"
                 CategoryObject={libraries}
+                GSAPDirection="down"
+            />
+
+            <IconShowCaseSkills
+                CategoryName="Development Environments"
+                CategoryObject={developmentEnvironments}
                 GSAPDirection="down"
             />
 
@@ -46,9 +70,9 @@ export default function Skills() {
                 GSAPDirection="down"
             />
 
-            <IconShowCaseSkills 
-                CategoryName="Databases"
-                CategoryObject={databases}
+            <IconShowCaseSkills
+                CategoryName="Game Development"
+                CategoryObject={gameDevelopment}
                 GSAPDirection="down"
             />
 

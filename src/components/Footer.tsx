@@ -30,7 +30,7 @@ function Footer() {
                     <img src={resume} className="h-8.5 w-auto interactive-animation hover:scale-115" alt="Resume Link"/>
                 </a>
 
-                <a href="mailto:alexdreyesz@gmail.com" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:contact@alexdreyesz.com" target="_blank" rel="noopener noreferrer">
                     <img src={gmailIcon} className="h-8.5 w-auto interactive-animation  hover:scale-115" alt="Email Link"/>
                 </a>
             </div>
